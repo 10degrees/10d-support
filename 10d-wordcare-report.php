@@ -60,8 +60,7 @@ if ($options['action'] == 'update' && $options['type'] == 'plugin' ){
 
   update_option('tend_plugin_update_log' , $allUpdates);
 
-}elseif ( $options['action'] == 'update' && $options['type'] == 'core' ) {
- // Iterate through the plugins being updated and check if ours is there
+} elseif ( $options['action'] == 'update' && $options['type'] == 'core' ) {
 
 
  if(get_option('tend_core_update_log')){
@@ -76,7 +75,7 @@ if ($options['action'] == 'update' && $options['type'] == 'plugin' ){
    array_push($allUpdates , $logStatement);
 
 
- update_option('tend_plugin_update_log' , $allUpdates);
+ update_option('tend_core_update_log' , $allUpdates);
 
 }
 
@@ -94,6 +93,8 @@ add_action( 'upgrader_process_complete', 'tend_plugin_upgrade_completed', 10, 2 
  * This function is hooked into the 'wp_dashboard_setup' action below.
  */
 function tend_plugin_report_dashboard_widget_function() {
+
+  if( current_user_can('manage_options') ) {
 
 	wp_add_dashboard_widget(
                  'tend_plugin_report_dashboard_widget',         // Widget slug.
@@ -120,6 +121,8 @@ function tend_plugin_report_dashboard_widget_function() {
        	// Save the sorted array back into the original metaboxes
 
        	$wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
+
+  }
 
 
 }
@@ -194,7 +197,7 @@ function tend_plugin_report_dashboard_display() {
     // Table for WordPress Core Updates Log
 
 
-    if(!get_option('tend_code_update_log')){
+    if(!get_option('tend_core_update_log')){
 
       ///nothing to report
 
