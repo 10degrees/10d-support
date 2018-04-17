@@ -189,7 +189,7 @@ function tend_plugin_report_dashboard_display() {
 
     } else {
 
-        echo 'No Updates in the log at the moment.';
+        echo 'No Plugin Updates in the log at the moment.';
 
 
     }
@@ -199,7 +199,7 @@ function tend_plugin_report_dashboard_display() {
 
     if(!get_option('tend_core_update_log')){
 
-      ///nothing to report
+      echo 'No WordPress Core Updates in the log at the moment.';
 
     } else {
 
@@ -252,9 +252,6 @@ function tend_plugin_report_dashboard_display() {
 
 
 
-
-
-
       // check WP version and display
 
      $WP_version = get_bloginfo( 'version' );
@@ -276,8 +273,6 @@ function tend_plugin_report_dashboard_display() {
         echo ' You are running the latest version of WordPress (' . $WP_version . ').</p>';
 
       }
-
-
 
 
 
@@ -339,20 +334,6 @@ echo '<a target="_blank" href="' . $testResults['reportUrl']. '">View Full Repor
 
 
 
-
-
-
-
-// Let's do a security scan too mebba ?
-
-// https://github.com/mozilla/http-observatory/blob/master/httpobs/docs/api.md#scan
-
-
-
-
-
-
-
 /* Give 10d Users the ability to clear the log by emptying the option */
 
 $current_user = wp_get_current_user();
@@ -364,14 +345,6 @@ echo '<hr /><p>
       </p>';
 
 }
-
-
-
-
-
-
-
-
 
 
 
