@@ -1,0 +1,39 @@
+
+
+#tend_plugin_report_dashboard_widget table{
+  border: 1px solid #c7c7c7;
+  border-spacing: 0;
+}
+
+
+#tend_plugin_report_dashboard_widget th{
+background: #bb272c;
+color: white;
+padding: 15px 15px 15px 7px;
+position:relative;
+}
+
+#tend_plugin_report_dashboard_widget th svg{
+  max-width: 25px;
+  max-height: 25px;
+  position: absolute;
+  right: 7px;
+  top: 12px;
+}
+
+
+#tend_plugin_report_dashboard_widget td{
+  border: 1px solid #c7c7c7;
+  padding: 7px;
+}
+
+
+#tend_plugin_report_dashboard_widget .clear-log{
+  color: #bb272c;
+}
+
+
+#tend_plugin_report_dashboard_widget .tend-icon{
+  max-width:14px;
+  height:auto;
+}
