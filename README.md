@@ -15,11 +15,11 @@ Reporting Plugin todo   - widget only visible to admin users only - TK
 
   - clear log function to include core update too - TK
 
- - way to trigger report - wp_cron - scheduled task - RM
+ - way to trigger report - Bash Script to api end point - MR
 
- - add unsubscribe button link to footer and add more stuff as per website footer
+ - add unsubscribe button link to footer and add more stuff as per website footer - TK
 
- - Initial deploy vis manageWP and/or manual
+ - Initial deploy vis manageWP and/or manual - TK
 
 
 
