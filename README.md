@@ -15,7 +15,7 @@ Reporting Plugin todo  
 
 - force widget to first place - TK - DONE
 
-  - clear log function to include core update too - TK
+  - clear log function to include core update too - TK - DONE
 
  - way to trigger report - Bash Script to api end point - MR
 

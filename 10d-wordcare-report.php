@@ -359,7 +359,7 @@ $current_user = wp_get_current_user();
 if (strpos($current_user->user_email, '@10degrees.uk') !== false) {
 
 echo '<hr /><p>
-      <a href="?clear-the-plugin-log-10d" class="clear-log">Click Here to Tidy Up Log</a><br/>
+      <a href="?clear-the-update-log-10d" class="clear-log">Click Here to Tidy Up Log</a><br/>
       <small>Removes all entries older than 2 months</small>
       </p>';
 
@@ -390,8 +390,10 @@ function clear_the_plugin_log() {
   $current_user = wp_get_current_user();
   if (strpos($current_user->user_email, '@10degrees.uk') !== false) {
 
-    if(isset($_REQUEST["clear-the-plugin-log-10d"])) {
+    if(isset($_REQUEST["clear-the-update-log-10d"])) {
 
+
+      //Clear Plugin Log
 
       $allUpdates = get_option('tend_plugin_update_log');
 
@@ -413,9 +415,33 @@ function clear_the_plugin_log() {
       }
 
 
-        echo '</pre>';
-
       update_option('tend_plugin_update_log' , $allUpdates);
+
+
+
+      // cLear the core log
+
+      $allCoreUpdates = get_option('tend_core_update_log');
+
+      // Search
+      foreach($allCoreUpdates as $logEntry => $value){
+        if (strpos($value, date('F')) !== false) {
+          // echo date('F');
+          //keep this Entry as it is from this month
+        }
+        elseif (strpos($value, date("F",strtotime("-1 month"))) !== false) {
+          // echo date("F",strtotime("-1 month"));
+          //keep this Entry as it is from last month
+        } else {
+
+          unset($allCoreUpdates[$logEntry]);
+
+        }
+
+      }
+
+
+      update_option('tend_core_update_log' , $allCoreUpdates);
 
 
     }
