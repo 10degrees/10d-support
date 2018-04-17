@@ -9,7 +9,7 @@ Reporting Plugin todo  
 
  - Options which allows us to set option for 1 email who the report goes - RM
 
-  - hard code 10d email to wp_mail fund: reports@10degrees.uk - TK Done (as bcc) 
+- hard code 10d email to wp_mail fund: reports@10degrees.uk - TK Done (as bcc)
 
  - general code tidy up, prefix functions etc - RM
 
@@ -19,7 +19,7 @@ Reporting Plugin todo  
 
  - way to trigger report - Bash Script to api end point - MR
 
- - add unsubscribe button link to footer and add more stuff as per website footer - TK
+ - add unsubscribe button link to footer and add more stuff as per website footer - TK - done (ish) added unsubscribe link)
 
  - Initial deploy vis manageWP and/or manual - TK
 
