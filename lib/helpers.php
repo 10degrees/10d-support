@@ -7,11 +7,16 @@
  * @param    $dump
  *
  */
-function dd($dump) {
-    echo "<pre>";
-    var_export($dump);
-    echo "</pre>";
-    die();
+
+if (!function_exists('dd')) {
+
+    function dd($dump) {
+        echo "<pre>";
+        var_export($dump);
+        echo "</pre>";
+        die();
+    }
+
 }
 
 /**
