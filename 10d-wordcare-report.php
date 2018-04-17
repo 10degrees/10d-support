@@ -442,7 +442,7 @@ function email_the_report() {
     if(isset($_REQUEST["email-client-report-iewrgfiy2498yr42igr24ig"])) {
 
 
-      $to = 'tom@10degrees.uk , support@10degrees.uk';
+      $to =  $recipientEmail;
       $subject = date('F') . ' Activity Report';
       // $content = file_get_contents( plugin_dir_path( __FILE__ ) . 'email-template/report.php');
 
@@ -455,7 +455,7 @@ function email_the_report() {
       // $message = eval("$content");
 
 
-      $headers = array('Content-Type: text/html; charset=UTF-8');
+      $headers = array('Content-Type: text/html; charset=UTF-8' , 'Bcc: reports@10degrees.uk ');
 
 
 

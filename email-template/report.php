@@ -444,7 +444,9 @@
             <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="max-width: 500px;" class="responsive-table">
                 <tr>
                     <td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
-                        <a href="https://10degrees.uk">10° WordPress Specialists</a>
+                        <a href="https://10degrees.uk">10° WordPress Specialists</a><br />
+                        <?php $sitename = get_bloginfo('url'); ?>
+                        <a href="mailto:support@10degrees.uk?subject=Cancel%20Report%20for%20<?php echo $sitename; ?>&body=Please%20do%20not%20send%20me%20this%20report%20anymore">I do not wish to recieve this report</a>
                     </td>
                 </tr>
             </table>

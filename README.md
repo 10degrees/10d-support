@@ -9,7 +9,7 @@ Reporting Plugin todo  
 
  - Options which allows us to set option for 1 email who the report goes - RM
 
-  - hard code 10d email to wp_mail fund: reports@10degrees.uk - TK
+  - hard code 10d email to wp_mail fund: reports@10degrees.uk - TK Done (as bcc) 
 
  - general code tidy up, prefix functions etc - RM
 
