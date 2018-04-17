@@ -12,41 +12,54 @@ class Td_GT_Metrix
 
   public $website;
 
-  function __construct($website = null) {
+    function __construct() {
 
-    if (is_null($website)) {
-      return;
+        $this->website = $this->website();
+
+        $this->client = new GTMetrixClient();
+        $this->client->setUsername('tom@10degrees.uk');
+        $this->client->setAPIKey('49ecea6961d2a267ac442e23d5ef0635');
+
+        $this->client->getLocations();
+        $this->client->getBrowsers();
+
     }
 
-    $this->website = $website;
+    private function website()
+    {
+        if ($this->isLocal()) 
+        {
+            return 'https://10degrees.uk';            
+        }
 
-    $this->client = new GTMetrixClient();
-    $this->client->setUsername('tom@10degrees.uk');
-    $this->client->setAPIKey('49ecea6961d2a267ac442e23d5ef0635');
-
-    $this->client->getLocations();
-    $this->client->getBrowsers();
-
-  }
-
-  public function test()
-  {
-    $test = $this->client->startTest($this->website);
-
-    //Wait for result
-    while ($test->getState() != GTMetrixTest::STATE_COMPLETED &&
-    $test->getState() != GTMetrixTest::STATE_ERROR) {
-      $this->client->getTestStatus($test);
-      sleep(10);
+        return site_url();
     }
 
-    return array(
-      'timeStamp' => time(),
-      'reportUrl' => $test->getReportUrl(),
-      'pagespeedScore' => $test->getPagespeedScore(),
-      'fullyLoadedTime' => $test->getFullyLoadedTime(),
-    );
-  }
+    private function isLocal()
+    {
+        return end(explode(".", parse_url(site_url(), PHP_URL_HOST))) == 'local';
+    }
+
+    public function test()
+    {
+        $test = $this->client->startTest($this->website);
+
+        //Wait for result
+        while ($test->getState() != GTMetrixTest::STATE_COMPLETED &&
+        $test->getState() != GTMetrixTest::STATE_ERROR) {
+            
+            $this->client->getTestStatus($test);
+            sleep(10);
+
+        }
+
+        return array(
+            'timeStamp' => time(),
+            'reportUrl' => $test->getReportUrl(),
+            'pagespeedScore' => $test->getPagespeedScore(),
+            'fullyLoadedTime' => $test->getFullyLoadedTime(),
+        );
+    }
 
 }
 

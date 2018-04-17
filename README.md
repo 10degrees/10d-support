@@ -1,7 +1,7 @@
-10d-wordcare-report
+# 10d-wordcare-report
 
 
-Reporting Plugin todo  
+## Reporting Plugin todo  
 
 - widget only visible to admin users only - TK - DONE
 
@@ -25,6 +25,10 @@ Reporting Plugin todo  
 
 
 
-// phase 2
+## phase 2
 
  - MR to look at github deployment
+
+## phase 3
+
+- Store update information as an array in database for more flexibility in output
