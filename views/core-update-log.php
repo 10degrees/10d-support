@@ -1,27 +1,29 @@
 <h3>WordPress Core Updates</h3>
 
-<table>
-  <tbody>
-    <th style="text-align: left;">
-        Recent Core Updates (<?php echo $count ?>)
-        
-        <a target="_blank" href="https://www.10degrees.uk/">
-          
-          <?php td_get_svg('10d-logo.svg'); ?>
+<div class="table-holder">
+  <table>
+    <tbody>
+      <th style="text-align: left;">
+          Recent Core Updates (<?php echo $count ?>)
 
-        </a>
+          <a target="_blank" href="https://www.10degrees.uk/">
 
-    </th>
+            <?php td_get_svg('10d-logo.svg'); ?>
 
-    <?php $newestFirst = array_reverse($log);
+          </a>
 
-    foreach($newestFirst as $entry) {
+      </th>
 
-        echo $entry;
+      <?php $newestFirst = array_reverse($log);
 
-    } ?>
+      foreach($newestFirst as $entry) {
 
-    </tbody>
-</table>
+          echo $entry;
+
+      } ?>
+
+      </tbody>
+  </table>
+</div>
 
 <hr />

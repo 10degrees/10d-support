@@ -1,37 +1,39 @@
 <h3>Plugin Updates</h3>
 
-<table>
-    <tbody>
-        <th style="text-align: left;">Year</th>
-        <th style="text-align: left;">Month</th>
-        <th style="text-align: left;">Update (<?php echo $count; ?>)
+<div class="table-holder">
+  <table>
+      <tbody>
+          <th style="text-align: left;">Year</th>
+          <th style="text-align: left;">Month</th>
+          <th style="text-align: left;">Update (<?php echo $count; ?>)
 
-            <a target="_blank" href="https://www.10degrees.uk/">
-        
-                <?php td_get_svg('10d-logo.svg'); ?>
+              <a target="_blank" href="https://www.10degrees.uk/">
 
-            </a>
-        </th>
+                  <?php td_get_svg('10d-logo.svg'); ?>
 
-        <?php 
+              </a>
+          </th>
 
-        $newestFirst = array_reverse($log);
+          <?php
 
-        foreach($newestFirst as $entry) {
+          $newestFirst = array_reverse($log);
 
-            echo $entry;
+          foreach($newestFirst as $entry) {
 
-        }
+              echo $entry;
 
-        ?>
+          }
 
-    </tbody>
-</table>
+          ?>
+
+      </tbody>
+  </table>
+</div>
 
 <p>
     <a href="javascript:void();" class="button button-primary tend-download-report-button">
         Export Report
     </a>
-</p> 
+</p>
 
 <hr />

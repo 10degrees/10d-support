@@ -224,7 +224,9 @@ function td_email_the_report() {
 
         if ($to)
         {
-            $subject = date('F') . ' Activity Report';
+
+            $sitename = get_bloginfo('url');
+            $subject = date('F') . ' Activity Report for ' . $sitename;
             // $content = file_get_contents( plugin_dir_path( __FILE__ ) . 'email-template/report.php');
 
             ob_start();

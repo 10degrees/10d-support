@@ -255,7 +255,7 @@
 
                   $count = count($log);
 
-                  echo '<th style="text-align: left;">Year</th><th style="text-align: left;">Month</th><th style="text-align: left;">Updates Completed ('.$count.')</th>';
+                  echo '<th style="text-align: left;">Year</th><th style="text-align: left;">Month</th><th style="text-align: left;">Plugin Updates Completed ('.$count.')</th>';
 
                   $newestFirst = array_reverse($log);
 
@@ -302,7 +302,7 @@
 
                 $count = count($Corelog);
 
-                echo '<th style="text-align: left;">Year</th><th style="text-align: left;">Month</th><th style="text-align: left;">Updates Completed ('.$count.')</th>';
+                echo '<th style="text-align: left;" colspan="3">Core Updates Completed ('.$count.')</th>';
 
                 $newestFirst = array_reverse($Corelog);
 
@@ -321,45 +321,13 @@
 <?php } ?>
 
 
-    <tr>
-        <td bgcolor="#FFFFFF" align="center" style="padding: 70px 15px 70px 15px;" class="section-padding">
-            <!--[if (gte mso 9)|(IE)]>
-            <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
-            <tr>
-            <td align="center" valign="top" width="500">
-            <![endif]-->
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-bottom: 20px; max-width: 500px;" class="responsive-table">
-                <!-- TITLE -->
-                <tr>
-                    <td align="center" style="padding: 0 0 10px 0; font-size: 25px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="padding" colspan="2">Website Security</td>
-                </tr>
-                <tr>
-                    <td align="center" style="padding:30px 0 10px 0; font-size: 18px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="padding" colspan="2">
-                      <?php
-                      if(isset($_SERVER['HTTPS'])) {
-                        if ($_SERVER['HTTPS'] == "on") {
-                              echo '
-                              <svg class="tend-icon" fill="#32bd32" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                              <path d="M18.5 14h-0.5v-6c0-3.308-2.692-6-6-6h-4c-3.308 0-6 2.692-6 6v6h-0.5c-0.825 0-1.5 0.675-1.5 1.5v15c0 0.825 0.675 1.5 1.5 1.5h17c0.825 0 1.5-0.675 1.5-1.5v-15c0-0.825-0.675-1.5-1.5-1.5zM6 8c0-1.103 0.897-2 2-2h4c1.103 0 2 0.897 2 2v6h-8v-6z"></path>
-                              </svg>';
-                              echo ' Your site is served over HTTPS.';
-                        }
-                      } ?>
-                    </td>
-                </tr>
-
-                  </table>
-
-        </td>
-    </tr>
-
     <?php $PageSpeed = get_option('td_GT_metrix_test');
 
     if($PageSpeed) {
     ?>
 
     <tr>
-        <td bgcolor="#E6E9ED" align="center" style="padding: 70px 15px 70px 15px;" class="section-padding">
+        <td bgcolor="#ffffff" align="center" style="padding: 70px 15px 70px 15px;" class="section-padding">
             <!--[if (gte mso 9)|(IE)]>
             <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
             <tr>

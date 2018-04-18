@@ -35,3 +35,9 @@ position:relative;
   max-width:14px;
   height:auto;
 }
+
+#td_plugin_report_dashboard_widget .table-holder{
+  max-height: 400px;
+  overflow: scroll;
+  border: 1px solid #c7c7c7;
+}
