@@ -221,7 +221,7 @@
         </td>
     </tr>
 
-<?php $log = get_option('tend_plugin_update_log'); if($log) { ?>
+<?php $log = get_option('td_plugin_update_log'); if($log) { ?>
 
     <tr>
         <td bgcolor="#F5F7FA" align="center" style="padding: 70px 15px 70px 15px;" class="section-padding">
@@ -272,7 +272,7 @@
 
 <?php } ?>
 
-<?php $Corelog = get_option('tend_core_update_log'); if($Corelog) { ?>
+<?php $Corelog = get_option('td_core_update_log'); if($Corelog) { ?>
 
     <tr>
         <td bgcolor="#E6E9ED" align="center" style="padding: 70px 15px 70px 15px;" class="section-padding">
@@ -353,7 +353,7 @@
         </td>
     </tr>
 
-    <?php $PageSpeed = get_option('tend_page_load_time');
+    <?php $PageSpeed = get_option('td_GT_metrix_test');
 
     if($PageSpeed) {
     ?>
@@ -375,7 +375,7 @@
                     <td align="center" style="padding:30px 0 10px 0; line-height:1.5em;font-size: 18px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="padding" colspan="2">
 
                       <?php
-                      $testResults = get_option('tend_GT_metrix_test');
+                      $testResults = get_option('td_GT_metrix_test');
                       $reportTime = $testResults['timeStamp'];
                       echo 'Date of last test: '  . date( "d F Y", $reportTime) . '<br />';
                       echo 'PageSpeed Score: ' . $testResults['pagespeedScore'] . '%<br />';
