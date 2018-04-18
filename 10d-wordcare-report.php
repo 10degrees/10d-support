@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
 
 Plugin Name: 10° Wordcare Report
 Description: Logging all the WordPress updates, export to a report and email it out.
@@ -62,14 +62,14 @@ function td_plugin_upgrade_completed( $upgrader_object, $options ) {
     }
 
     foreach( $options['plugins'] as $plugin ) {
-    
+
         // get Plugin Data
         $pluginFolderPath = plugin_dir_path( __DIR__ );
         $pluginPath = $pluginFolderPath . $plugin;
         $pluginData = get_plugin_data( $pluginPath );
         $logStatement =  '<tr><td><small>' . date('Y') . '</small></td><td><small>' . date('F') . '</small></td><td><small>We updated the plugin <b>' . $pluginData["Name"] . '</b> to version ' . $pluginData["Version"] . ' on ' . date('l, jS F') . '.</small></td></tr>';
         array_push($allUpdates , $logStatement);
-    
+
     }
 
     update_option('td_plugin_update_log' , $allUpdates);
@@ -77,7 +77,7 @@ function td_plugin_upgrade_completed( $upgrader_object, $options ) {
     } elseif ( $options['action'] == 'update' && $options['type'] == 'core' ) {
 
         if(get_option('td_core_update_log')){
-            
+
             $allUpdates = get_option('td_core_update_log');
 
         } else {
@@ -87,7 +87,7 @@ function td_plugin_upgrade_completed( $upgrader_object, $options ) {
         }
 
         $WP_version = get_bloginfo( 'version' );
-        
+
         $logStatement =  '<tr><td colspan="3"><small>We updated the WordPress Core to the latest available version (' . $WP_version . ') on ' . date('l, jS F') . '.</small></td></tr>';
 
         array_push($allUpdates , $logStatement);
@@ -144,7 +144,7 @@ add_action( 'wp_dashboard_setup', 'td_wordcare_report_dashboard_widget_function'
 function td_clear_the_plugin_log() {
 
     $current_user = wp_get_current_user();
-    
+
     if (strpos($current_user->user_email, '@10degrees.uk') !== false) {
 
         if(isset($_REQUEST["clear-the-update-log-10d"])) {
@@ -157,15 +157,15 @@ function td_clear_the_plugin_log() {
             foreach($allUpdates as $logEntry => $value) {
 
                 if (strpos($value, date('F')) !== false) {
-                    
+
                     // echo date('F');
                     //keep this Entry as it is from this month
-                    
+
                 } elseif (strpos($value, date("F",strtotime("-1 month"))) !== false) {
 
                     // echo date("F",strtotime("-1 month"));
                     //keep this Entry as it is from last month
-                    
+
                 } else {
 
                     unset($allUpdates[$logEntry]);
@@ -184,15 +184,15 @@ function td_clear_the_plugin_log() {
             foreach($allCoreUpdates as $logEntry => $value) {
 
                 if (strpos($value, date('F')) !== false) {
-                    
+
                     // echo date('F');
                     //keep this Entry as it is from this month
-                    
+
                 } elseif (strpos($value, date("F",strtotime("-1 month"))) !== false) {
 
                     // echo date("F",strtotime("-1 month"));
                     // keep this Entry as it is from last month
-                    
+
                 } else {
 
                     unset($allCoreUpdates[$logEntry]);
@@ -222,14 +222,14 @@ function td_email_the_report() {
 
         $to = $ReportRecipient->getReportRecipient();
 
-        if ($to) 
+        if ($to)
         {
             $subject = date('F') . ' Activity Report';
             // $content = file_get_contents( plugin_dir_path( __FILE__ ) . 'email-template/report.php');
 
             ob_start();
 
-            require_once( ABSPATH . '/wp-content/plugins/10d-plugin-report/email-template/report.php');
+            require_once( ABSPATH . '/wp-content/plugins/10d-wordcare-report/email-template/report.php');
             $message = ob_get_contents();
 
             var_dump($message);
