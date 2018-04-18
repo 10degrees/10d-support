@@ -27,9 +27,9 @@ class Td_GT_Metrix
 
     private function website()
     {
-        if ($this->isLocal()) 
+        if ($this->isLocal())
         {
-            return 'https://10degrees.uk';            
+            return 'https://10degrees.uk';
         }
 
         return site_url();
@@ -47,7 +47,7 @@ class Td_GT_Metrix
         //Wait for result
         while ($test->getState() != GTMetrixTest::STATE_COMPLETED &&
         $test->getState() != GTMetrixTest::STATE_ERROR) {
-            
+
             $this->client->getTestStatus($test);
             sleep(10);
 
