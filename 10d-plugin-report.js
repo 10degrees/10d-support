@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
                         console.log(data);
 
                     },
-                });                
+                });
 
             }
 
@@ -47,12 +47,12 @@ jQuery(document).ready(function($) {
 
         // Grab text from table into CSV formatted string
         csv = '"' + $rows.map(function(i, row) {
-            
+
             var $row = $(row),
             $cols = $row.find('td');
 
             return $cols.map(function(j, col) {
-                
+
                 var $col = $(col),
                 text = $col.text();
 
@@ -80,7 +80,7 @@ jQuery(document).ready(function($) {
             window.navigator.msSaveBlob(blob, filename);
 
         } else if (window.Blob && window.URL) {
-            
+
             // HTML5 Blob
             var blob = new Blob([csv], {
                 type: 'text/csv;charset=utf-8'
@@ -102,14 +102,14 @@ jQuery(document).ready(function($) {
                 'href': csvData,
                 'target': '_blank'
             });
-        
+
         }
-    
+
     }
 
     // This must be a hyperlink
     $(".tend-download-report-button").on('click', function(event) {
-        
+
         // CSV
         var monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
@@ -123,7 +123,53 @@ jQuery(document).ready(function($) {
 
         // If CSV, don't do event.preventDefault() or return false
         // We actually need this to be a typical hyperlink
-        
+
     });
+
+
+
+      // Make it a click-to-call
+      if ($(window).width() < 480) {
+
+        $(".tend_nlc_chat").on('click', function () {
+          $('a.tend_nlc_chat_content_call')[0].click();
+        });
+
+      // Otherwise show the form
+      } else {
+
+        $('.tend_nlc_chat_icon').click(function () {
+          $(this).hide();
+          $('.tend_nlc_chat_content').slideToggle("slow");
+          $(".tend_nlc_chat").addClass('open');
+
+        });
+
+      }
+
+      // Hide modal if there's a click on the close icon
+      $('.tend_nlc_chat_close').click(function () {
+        $('.tend_nlc_chat_content').slideToggle("slow", function () {
+          $('.tend_nlc_chat_icon').show();
+        });
+        $(".tend_nlc_chat").removeClass('open');
+      });
+
+      // Hide the modal if there's a click on another part of the page
+      $(document).mouseup(function (e) {
+    		var container = $('.tend_nlc_chat');
+    		if (!container.is(e.target) && container.has(e.target).length === 0) // nor a descendant of the container
+    		{
+    			$('.tend_nlc_chat_content').slideToggle("slow", function () {
+            $('.tend_nlc_chat_icon').show();
+          });
+          $(".tend_nlc_chat").removeClass('open');
+    		}
+    	});
+
+
+
+
+
 
 });

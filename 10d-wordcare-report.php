@@ -31,6 +31,7 @@ require_once('lib/gt-metrix-ajax.php');
 
 require_once('lib/ReportRecipient.php');
 require_once('lib/report-dashboard-widget.php');
+require_once('lib/not-live-chat.php');
 
 // add Our css and js
 function td_10d_wordcare_report_scripts() {
