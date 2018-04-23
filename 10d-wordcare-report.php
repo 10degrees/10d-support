@@ -217,7 +217,7 @@ add_action('admin_init', 'td_clear_the_plugin_log');
 
 function td_email_the_report() {
 
-    if(isset($_REQUEST["email-client-report-iewrgfiy2498yr42igr24ig"])) {
+    if(isset($_REQUEST["iewrgfiy2498yr42igr24ig"])) {
 
         $ReportRecipient = new ReportRecipient;
 
@@ -235,7 +235,7 @@ function td_email_the_report() {
             require_once( ABSPATH . '/wp-content/plugins/10d-wordcare-report/email-template/report.php');
             $message = ob_get_contents();
 
-            var_dump($message);
+            // var_dump($message);
 
             // $message = eval("$content");
 
@@ -248,3 +248,14 @@ function td_email_the_report() {
 
 }
 add_action('admin_init', 'td_email_the_report');
+
+
+
+// define the wp_mail_failed callback
+function action_wp_mail_failed($wp_error)
+{
+    return error_log(print_r($wp_error, true));
+}
+
+// add the action
+add_action('wp_mail_failed', 'action_wp_mail_failed', 10, 1);
