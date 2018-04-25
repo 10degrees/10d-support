@@ -255,7 +255,7 @@
 
                   $count = count($log);
 
-                  echo '<th style="text-align: left;">Year</th><th style="text-align: left;">Month</th><th style="text-align: left;">Plugin Updates Completed ('.$count.')</th>';
+                  echo '<th style="text-align: left;">Month</th><th style="text-align: left;">Plugin Updates Completed ('.$count.')</th>';
 
                   $newestFirst = array_reverse($log);
 

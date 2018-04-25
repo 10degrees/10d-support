@@ -3,7 +3,6 @@
 <div class="table-holder">
   <table>
       <tbody>
-          <th style="text-align: left;">Year</th>
           <th style="text-align: left;">Month</th>
           <th style="text-align: left;">Update (<?php echo $count; ?>)
 

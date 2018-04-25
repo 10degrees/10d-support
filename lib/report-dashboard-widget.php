@@ -16,7 +16,7 @@ function td_plugin_report_dashboard_display() {
 
     } else {
 
-        echo 'No Plugin Updates in the log at the moment.';
+        echo 'No Plugin Updates in the log at the moment. ';
 
     }
 
@@ -69,7 +69,7 @@ function td_plugin_report_dashboard_display() {
             <path d="M18.5 14h-0.5v-6c0-3.308-2.692-6-6-6h-4c-3.308 0-6 2.692-6 6v6h-0.5c-0.825 0-1.5 0.675-1.5 1.5v15c0 0.825 0.675 1.5 1.5 1.5h17c0.825 0 1.5-0.675 1.5-1.5v-15c0-0.825-0.675-1.5-1.5-1.5zM6 8c0-1.103 0.897-2 2-2h4c1.103 0 2 0.897 2 2v6h-8v-6z"></path>
             </svg>';
 
-            echo ' Your site is secure.</p>';
+            echo ' Your site is secured with HTTPS.</p>';
 
         }
 

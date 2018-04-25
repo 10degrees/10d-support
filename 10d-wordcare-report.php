@@ -68,7 +68,7 @@ function td_plugin_upgrade_completed( $upgrader_object, $options ) {
         $pluginFolderPath = plugin_dir_path( __DIR__ );
         $pluginPath = $pluginFolderPath . $plugin;
         $pluginData = get_plugin_data( $pluginPath );
-        $logStatement =  '<tr><td><small>' . date('Y') . '</small></td><td><small>' . date('F') . '</small></td><td><small>We updated the plugin <b>' . $pluginData["Name"] . '</b> to version ' . $pluginData["Version"] . ' on ' . date('l, jS F') . '.</small></td></tr>';
+        $logStatement =  '<tr><td><small>' . date('F') . '</small></td><td><small>We updated the plugin <b>' . $pluginData["Name"] . '</b> to version ' . $pluginData["Version"] . ' on ' . date('l, jS F') . '.</small></td></tr>';
         array_push($allUpdates , $logStatement);
 
     }
@@ -217,7 +217,7 @@ add_action('admin_init', 'td_clear_the_plugin_log');
 
 function td_email_the_report() {
 
-    if(isset($_REQUEST["iewrgfiy2498yr42igr24ig"])) {
+    if(isset($_REQUEST["iewrgfiy2498yr42igr24igiojfoeifbfei88s"])) {
 
         $ReportRecipient = new ReportRecipient;
 
@@ -228,16 +228,12 @@ function td_email_the_report() {
 
             $sitename = get_bloginfo('url');
             $subject = date('F') . ' Activity Report for ' . $sitename;
-            // $content = file_get_contents( plugin_dir_path( __FILE__ ) . 'email-template/report.php');
 
             ob_start();
 
             require_once( ABSPATH . '/wp-content/plugins/10d-wordcare-report/email-template/report.php');
             $message = ob_get_contents();
 
-            // var_dump($message);
-
-            // $message = eval("$content");
 
             $headers = array('Content-Type: text/html; charset=UTF-8' , 'Bcc: reports@10degrees.uk ');
 
@@ -247,7 +243,7 @@ function td_email_the_report() {
     }
 
 }
-add_action('admin_init', 'td_email_the_report');
+add_action('init', 'td_email_the_report');
 
 
 

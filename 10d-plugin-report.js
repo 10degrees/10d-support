@@ -158,6 +158,7 @@ jQuery(document).ready(function($) {
       // Hide the modal if there's a click on another part of the page
       $(document).mouseup(function (e) {
     		var container = $('.tend_nlc_chat');
+        if(container.hasClass('open')) {
     		if (!container.is(e.target) && container.has(e.target).length === 0) // nor a descendant of the container
     		{
     			$('.tend_nlc_chat_content').slideToggle("slow", function () {
@@ -165,6 +166,7 @@ jQuery(document).ready(function($) {
           });
           $(".tend_nlc_chat").removeClass('open');
     		}
+        }
     	});
 
 

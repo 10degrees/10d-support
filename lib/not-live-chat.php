@@ -11,7 +11,7 @@
   <div class="tend_nlc_chat_content">
     <div class="tend_nlc_chat_banner">
       <h2>
-        Contact <?php td_get_svg(); ?>
+        Contact <?php td_get_svg('10d-logo.svg'); ?>
       </h2>
       <div class="tend_nlc_chat_close">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
@@ -22,7 +22,7 @@
     </div>
     <div class="tend_nlc_chat_content_inner">
       <p class="tend_nlc_chat_content_inner_message">
-        Unlimited support is avliable to our WordCare clients. Please contact us now and let us know how we can help.
+        Unlimited support is available to our WordCare clients. Please contact us now and let us know how we can help.
       </p>
       <hr />
 
@@ -41,7 +41,61 @@
 
         <hr />
 
-        Form Here
+
+
+
+          <?php
+            if(isset($_POST['ticket_submit'])) {
+
+              $current_user = wp_get_current_user();
+              $to = 'support@10degrees.uk';
+              $from = esc_html( $current_user->user_email );
+              $subject = $_POST['ticket_subject'];
+              $body = $_POST['ticket_content'];
+              $headers = array('Content-Type: text/html; charset=UTF-8' , 'From: '. $from  );
+
+          wp_mail( $to, $subject, $body, $headers );
+
+          echo '<small>Thank you, your ticket has been sent to our support team. We will respond to your ticket shortly and to your email address (' . $from . ').</small>';
+
+          ?>
+          <script>
+          jQuery(document).ready(function($) {
+
+            $('.tend_nlc_chat_icon').hide();
+
+            $('.tend_nlc_chat_content').slideToggle("slow", function () {});
+
+            $(".tend_nlc_chat").addClass('open');
+
+          });
+            </script>
+          <?php
+
+          } else { ?>
+
+
+          <form name="post" action="" method="post" id="td-nlc">
+
+        		<div class="input-text-wrap">
+        			<label for="ticket-subject">
+        				Support Ticket Title</label><br />
+        			<input type="text" name="ticket_subject" id="ticket-subject" autocomplete="off">
+        		</div>
+
+        		<div class="textarea-wrap">
+        			<textarea name="ticket_content" id="ticket-content" class="mceEditor" rows="6" cols="15" autocomplete="off" placeholder="Dear Support Team..."></textarea>
+        		</div>
+
+        		<p class="submit">
+        			<input type="hidden" name="ticket_submit" value="submitted">
+              <input type="submit" class="button button-primary" value="Submit Support Ticket">
+              <br class="clear">
+        		</p>
+
+        	</form>
+
+        <?php } ?>
 
     </div>
   </div>
