@@ -3,28 +3,6 @@
 
 ## Reporting Plugin todo  
 
-- widget only visible to admin users only - TK - DONE
-
- - get GT metric report working as Ajax request - RM -DONE
-
- - Options which allows us to set option for 1 email who the report goes - RM - DONE
-
-- hard code 10d email to wp_mail fund: reports@10degrees.uk - TK DONE (as bcc)
-
- - general code tidy up, prefix functions etc - RM - DONE
-
-- force widget to first place - TK - DONE
-
-  - clear log function to include core update too - TK - DONE
-
- - way to trigger report - Bash Script to api end point - MR
-
- - add unsubscribe button link to footer and add more stuff as per website footer - TK - DONE (ish) added unsubscribe link)
-
- - Initial deploy vis manageWP and/or manual - TK
-
-
-
 ## phase 2
 
  - MR to look at github deployment
