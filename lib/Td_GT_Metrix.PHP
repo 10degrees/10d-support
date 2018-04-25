@@ -8,6 +8,7 @@ use Entrecore\GTMetrixClient\GTMetrixTest;
  */
 class Td_GT_Metrix
 {
+  
   public $client;
 
   public $website;
