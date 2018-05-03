@@ -3,7 +3,7 @@
 
 Plugin Name: 10° Wordcare Report
 Description: Logging all the WordPress updates, export to a report and email it out.
-Version: 1.0.0
+Version: 1.0.1
 Author: Tom Kay and Ralph Morris
 Author URI: https://10degrees.uk
 Text Domain: td
