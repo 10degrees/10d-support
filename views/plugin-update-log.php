@@ -1,7 +1,7 @@
 <h3>Plugin Updates</h3>
 
 <div class="table-holder">
-  <table>
+  <table class="plugin-update-table">
       <tbody>
           <th style="text-align: left;">Month</th>
           <th style="text-align: left;">Update (<?php echo $count; ?>)

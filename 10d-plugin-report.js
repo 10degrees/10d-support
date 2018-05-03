@@ -64,6 +64,8 @@ jQuery(document).ready(function($) {
                 .split(tmpRowDelim).join(rowDelim)
                 .split(tmpColDelim).join(colDelim) + '"';
 
+                console.log($rows);
+
 
         // Deliberate 'false', see comment below
         if (false && window.navigator.msSaveBlob) {
@@ -117,7 +119,7 @@ jQuery(document).ready(function($) {
         var d = new Date();
         var month = monthNames[d.getMonth()];
         var filename = month+'10degreesPluginReport.csv';
-        var args = [$('#tend_plugin_report_dashboard_widget table'), filename];
+        var args = [$('#td_plugin_report_dashboard_widget table.plugin-update-table'), filename];
 
         exportTableToCSV.apply(this, args);
 

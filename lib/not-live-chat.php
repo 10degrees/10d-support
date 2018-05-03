@@ -1,5 +1,10 @@
 <?php // Output the form on the front end
    function tend_load_floaty_tab() {
+
+if ( RGForms::is_gravity_page() ) {
+  // don't try to load on gforms pages due to noconflict mode being awkward
+} else {
+
      ?>
 <div class="tend_nlc_chat">
   <div class="tend_nlc_chat_icon">
@@ -101,6 +106,10 @@
   </div>
 </div>
 
-<?php }
+<?php
+
+} //endif 
+
+}
 
 add_action( 'admin_footer', 'tend_load_floaty_tab' , 200);

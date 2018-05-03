@@ -40,6 +40,8 @@ function td_10d_wordcare_report_scripts() {
 }
 add_action( 'admin_enqueue_scripts', 'td_10d_wordcare_report_scripts' );
 
+
+
 /**
  * This function runs when WordPress completes its upgrade process
  * It iterates through each plugin updated to see if ours is included

@@ -113,7 +113,7 @@
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="wrapper">
                 <tr>
                     <td align="center" valign="top" style="padding: 15px 0;" class="logo">
-                        <a href="https://10degrees.uk" target="_blank">
+                        <a href="https://www.10degrees.uk/?utm_source=wordcare_report&utm_medium=email" target="_blank">
                           <svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
                       <defs>
@@ -374,10 +374,10 @@
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-bottom: 20px; max-width: 500px;" class="responsive-table">
                 <!-- TITLE -->
                 <tr>
-                    <td align="center" style="padding: 0 0 10px 0; font-size: 25px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="padding" colspan="2">Whats New at 10°</td>
+                    <td align="center" style="padding: 0 0 10px 0; font-size: 25px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="padding" colspan="2">What's New at 10°</td>
                 </tr>
                 <tr>
-                    <td align="center" style="padding:10px;" class="padding" colspan="2"><a href="https://www.10degrees.uk/blog/">
+                    <td align="center" style="padding:10px;" class="padding" colspan="2"><a href="https://www.10degrees.uk/blog/?utm_source=wordcare_report&utm_medium=email">
                       <img style="max-width:500%; width:100%; height:auto" src="https://10degrees.uk/wp-content/uploads/2017/06/10d-team.jpg" alt="Picture of the 10 Degrees team" />
                     </a></td>
                 </tr>
@@ -388,7 +388,7 @@
                                 <td align="center" style="padding-top: 25px;" class="padding">
                                     <table border="0" cellspacing="0" cellpadding="0" class="mobile-button-container">
                                         <tr>
-                                          <td align="center" style="border-radius: 3px;" bgcolor="#bb272c"><a href="https://www.10degrees.uk/blog/" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #bb272c; display: inline-block;" class="mobile-button">Check out our blog for the latest updates and news from the 10° team &rarr;</a></td>
+                                          <td align="center" style="border-radius: 3px;" bgcolor="#bb272c"><a href="https://www.10degrees.uk/blog/?utm_source=wordcare_report&utm_medium=email" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #bb272c; display: inline-block;" class="mobile-button">Check out our blog for the latest updates and news from the 10° team &rarr;</a></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -412,7 +412,7 @@
             <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="max-width: 500px;" class="responsive-table">
                 <tr>
                     <td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
-                        <a href="https://10degrees.uk">10° WordPress Specialists</a><br />
+                        <a href="https://www.10degrees.uk/?utm_source=wordcare_report&utm_medium=email">10° WordPress Specialists</a><br />
                         <?php $sitename = get_bloginfo('url'); ?>
                         <a href="mailto:support@10degrees.uk?subject=Cancel%20Report%20for%20<?php echo $sitename; ?>&body=Please%20do%20not%20send%20me%20this%20report%20anymore">I do not wish to recieve this report</a>
                     </td>
