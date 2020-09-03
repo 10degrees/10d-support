@@ -88,7 +88,7 @@ function td_plugin_report_dashboard_display() {
 
     if ($testResults && ($NewTestRequired == FALSE) ) {
 
-        echo td_view('_gt-metrix-overview', array('testResults' => $testResults) );
+        echo td_view('gt-metrix-overview', array('testResults' => $testResults));
 
     } else {
 
@@ -115,4 +115,42 @@ function td_plugin_report_dashboard_display() {
 
     }
 
-} ?>
+}
+
+/**
+ * Add a widget to the dashboard.
+ *
+ * This function is hooked into the 'wp_dashboard_setup' action below.
+ */
+function td_wordcare_report_dashboard_widget_function() {
+
+    if( current_user_can('manage_options') ) {
+
+    	wp_add_dashboard_widget(
+             'td_plugin_report_dashboard_widget',         // Widget slug.
+             '10° WordCare Reporting',         // Title.
+             'td_plugin_report_dashboard_display' // Display function.
+        );
+
+        global $wp_meta_boxes;
+
+       	// Get the regular dashboard widgets array
+       	// (which has our new widget already but at the end)
+
+       	$normal_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
+
+       	// Backup and delete our new dashboard widget from the end of the array
+       	$example_widget_backup = array( 'td_plugin_report_dashboard_widget' => $normal_dashboard['td_plugin_report_dashboard_widget'] );
+
+       	unset( $normal_dashboard['td_plugin_report_dashboard_widget'] );
+
+       	// Merge the two arrays together so our widget is at the beginning
+       	$sorted_dashboard = array_merge( $example_widget_backup, $normal_dashboard );
+
+       	// Save the sorted array back into the original metaboxes
+       	$wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
+
+    }
+
+}
+add_action( 'wp_dashboard_setup', 'td_wordcare_report_dashboard_widget_function' );
