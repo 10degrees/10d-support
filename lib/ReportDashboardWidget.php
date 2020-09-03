@@ -128,7 +128,7 @@ function td_wordcare_report_dashboard_widget_function() {
 
     	wp_add_dashboard_widget(
              'td_plugin_report_dashboard_widget',         // Widget slug.
-             '10° WordCare Reporting',         // Title.
+             '10 Degrees WordCare',         // Title.
              'td_plugin_report_dashboard_display' // Display function.
         );
 

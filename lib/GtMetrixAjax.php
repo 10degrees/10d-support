@@ -4,7 +4,7 @@ function td_get_gt_metrix_report()
 {
     $Td_GT_Metrix = new Td_GT_Metrix();
     $testResults = $Td_GT_Metrix->test();
-    update_option('td_GT_metrix_test' , $testResults);
+    update_option('td_GT_metrix_test', $testResults);
     wp_send_json(td_view('_gt-metrix-overview', array('testResults' => $testResults)));
 }
 

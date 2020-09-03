@@ -20,6 +20,12 @@ if (!defined('ABSPATH')) {
 */
 require_once('lib/Helpers.php');
 
+/**
+ * Composer
+ *
+ */
+require __DIR__ . '/vendor/autoload.php';
+
 /*
 * Enqueue assets
 */
@@ -28,12 +34,12 @@ require_once('lib/Enqueue.php');
 /*
 * GT Metrix
 */
-require_once('gt-metrix/src/GTMetrixBrowser.php');
-require_once('gt-metrix/src/GTMetrixClient.php');
-require_once('gt-metrix/src/GTMetrixException.php');
-require_once('gt-metrix/src/GTMetrixConfigurationException.php');
-require_once('gt-metrix/src/GTMetrixLocation.php');
-require_once('gt-metrix/src/GTMetrixTest.php');
+// require_once('gt-metrix/src/GTMetrixBrowser.php');
+// require_once('gt-metrix/src/GTMetrixClient.php');
+// require_once('gt-metrix/src/GTMetrixException.php');
+// require_once('gt-metrix/src/GTMetrixConfigurationException.php');
+// require_once('gt-metrix/src/GTMetrixLocation.php');
+// require_once('gt-metrix/src/GTMetrixTest.php');
 require_once('lib/GtMetrix.php');
 require_once('lib/GtMetrixAjax.php');
 

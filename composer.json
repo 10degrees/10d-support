@@ -1,0 +1,16 @@
+{
+    "name": "10degrees/10d-wordcare-report",
+    "description": "Management and reporting for 10 Degrees WordCare clients.",
+    "type": "wordpress-plugin",
+    "license": "GPL3",
+    "authors": [
+        {
+            "name": "Matt Radford",
+            "email": "matt@10degrees.uk"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "philcook/gtmetrix": "^1.0"
+    }
+}
