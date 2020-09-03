@@ -9,8 +9,9 @@
             "email": "matt@10degrees.uk"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
-        "philcook/gtmetrix": "^1.0"
+        "philcook/gtmetrix": "^1.0",
+        "afragen/github-updater": "dev-master"
     }
 }

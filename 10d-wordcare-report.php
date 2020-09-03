@@ -34,19 +34,8 @@ require_once('lib/Enqueue.php');
 /*
 * GT Metrix
 */
-// require_once('gt-metrix/src/GTMetrixBrowser.php');
-// require_once('gt-metrix/src/GTMetrixClient.php');
-// require_once('gt-metrix/src/GTMetrixException.php');
-// require_once('gt-metrix/src/GTMetrixConfigurationException.php');
-// require_once('gt-metrix/src/GTMetrixLocation.php');
-// require_once('gt-metrix/src/GTMetrixTest.php');
 require_once('lib/GtMetrix.php');
 require_once('lib/GtMetrixAjax.php');
-
-/*
-* Not Live Chat
-*/
-// require_once('lib/not-live-chat.php');
 
 /*
 * Watch for upgrades and log results

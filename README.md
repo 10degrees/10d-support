@@ -1,11 +1,7 @@
 # 10 Degrees WordCare
 
-## Reporting Plugin todo
+Management and reporting for 10 Degrees WordCare clients.
 
-## phase 2
+## To do
 
- - MR to look at github deployment
 
-## phase 3
-
-- Store update information as an array in database for more flexibility in output
