@@ -1,7 +1,6 @@
-# 10d-wordcare-report
+# 10 Degrees WordCare
 
-
-## Reporting Plugin todo  
+## Reporting Plugin todo
 
 ## phase 2
 

@@ -1,20 +1,16 @@
 <?php
 /*
-
-Plugin Name: 10° Wordcare Report
-Description: Logging all the WordPress updates, export to a report and email it out.
-Version: 1.0.1
-Author: Tom Kay and Ralph Morris
-Author URI: https://10degrees.uk
-Text Domain: td
-
+* Plugin Name: 10 Degrees Wordcare
+* Description: Management and reporting for 10 Degrees WordCare clients.
+* Version: 1.1.0
+* Author: 10 Degrees
+* Author URI: https://10degrees.uk
+* Text Domain: td
 */
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-
+if (! defined('ABSPATH')) {
     exit;
-
 }
 
 require_once('lib/helpers.php');
@@ -22,7 +18,7 @@ require_once('lib/helpers.php');
 require_once('gt-metrix/src/GTMetrixBrowser.php');
 require_once('gt-metrix/src/GTMetrixClient.php');
 require_once('gt-metrix/src/GTMetrixException.php');
-require_once('gt-metrix/src/GTMetrixConfigurationException.php');;
+require_once('gt-metrix/src/GTMetrixConfigurationException.php');
 require_once('gt-metrix/src/GTMetrixLocation.php');
 require_once('gt-metrix/src/GTMetrixTest.php');
 
@@ -40,8 +36,6 @@ function td_10d_wordcare_report_scripts() {
 }
 add_action( 'admin_enqueue_scripts', 'td_10d_wordcare_report_scripts' );
 
-
-
 /**
  * This function runs when WordPress completes its upgrade process
  * It iterates through each plugin updated to see if ours is included
@@ -55,13 +49,9 @@ function td_plugin_upgrade_completed( $upgrader_object, $options ) {
 
     // Iterate through the plugins being updated and check if ours is there
     if(get_option('td_plugin_update_log')) {
-
         $allUpdates = get_option('td_plugin_update_log');
-
     } else {
-
         $allUpdates = array();
-
     }
 
     foreach( $options['plugins'] as $plugin ) {
