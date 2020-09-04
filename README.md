@@ -8,8 +8,8 @@ Run `composer install` to install dependencies.
 
 ## Installing the plugin on client websites
 
-1) First install the latest _Github Updater_ plugin from [https://github.com/afragen/github-updater/releases](https://github.com/afragen/github-updater/releases).
-2)
+1) Install the latest _Github Updater_ plugin from [https://github.com/afragen/github-updater/releases](https://github.com/afragen/github-updater/releases).
+2) https://github.com/10degrees/10d-wordcare-report
 
 Access to this plugin's private repository on Github is controlled via a Personal Access Token, stored in `lib/GithubUpdater.php`.
 When this plugin is activated, the _Github Updater_ settings page will no longer be accessible.
