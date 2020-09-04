@@ -1,6 +1,6 @@
 <?php
 /*
-* Plugin Name: 10 Degrees Wordcare
+* Plugin Name: 10 Degrees WordCare
 * Description: Management and reporting for 10 Degrees WordCare clients.
 * Version: 1.1.0
 * Author: 10 Degrees

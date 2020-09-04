@@ -1,20 +1,5 @@
 <?php
 /**
- * Dump and Die variable or whatever
- *
- * @param    $dump
- */
-if (!function_exists('dd')) {
-    function dd($dump)
-    {
-        echo "<pre>";
-        var_export($dump);
-        echo "</pre>";
-        die();
-    }
-}
-
-/**
  * Load a view and pass variables into it
  *
  * To ouput a view you would want to echo it
