@@ -1,0 +1,40 @@
+#td_plugin_report_dashboard_widget table{
+  border: 1px solid #c7c7c7;
+  border-spacing: 0;
+  width:100%;
+}
+
+#td_plugin_report_dashboard_widget th{
+background: #bb272c;
+color: white;
+padding: 15px 15px 15px 7px;
+position:relative;
+}
+
+#td_plugin_report_dashboard_widget th svg{
+  max-width: 25px;
+  max-height: 25px;
+  position: absolute;
+  right: 7px;
+  top: 12px;
+}
+
+#td_plugin_report_dashboard_widget td{
+  border: 1px solid #c7c7c7;
+  padding: 7px;
+}
+
+#td_plugin_report_dashboard_widget .clear-log{
+  color: #bb272c;
+}
+
+#td_plugin_report_dashboard_widget .tend-icon{
+  max-width:14px;
+  height:auto;
+}
+
+#td_plugin_report_dashboard_widget .table-holder{
+  max-height: 400px;
+  overflow: scroll;
+  border: 1px solid #c7c7c7;
+}

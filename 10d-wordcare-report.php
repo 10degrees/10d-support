@@ -4,7 +4,8 @@
 * Description: Management and reporting for 10 Degrees WordCare clients.
 * Version: 1.1.0
 * Author: 10 Degrees
-* Author URI: https://10degrees.uk
+* Author URI: https://www.10degrees.uk
+* Bitbucket Plugin URI: https://bitbucket.org/10degrees/10d-wordcare-report
 * Text Domain: td
 */
 
@@ -15,16 +16,20 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+/**
+ * Composer
+ */
+require __DIR__ . '/vendor/autoload.php';
+
 /*
 * Helpers
 */
 require_once('lib/Helpers.php');
 
-/**
- * Composer
- *
- */
-require __DIR__ . '/vendor/autoload.php';
+/*
+* Access credentials for the BitBucket repository for this plugin
+*/
+require_once('lib/GithubUpdater.php');
 
 /*
 * Enqueue assets

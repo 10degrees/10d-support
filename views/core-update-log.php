@@ -14,13 +14,12 @@
 
       </th>
 
-      <?php $newestFirst = array_reverse($log);
-
-      foreach($newestFirst as $entry) {
-
-          echo $entry;
-
-      } ?>
+        <?php
+        $newestFirst = array_reverse($log);
+        foreach ($newestFirst as $entry) {
+            echo $entry;
+        }
+        ?>
 
       </tbody>
   </table>

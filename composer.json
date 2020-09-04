@@ -5,13 +5,20 @@
     "license": "GPL3",
     "authors": [
         {
+            "name": "Tom Kay",
+            "email": "tom@10degrees.uk"
+        },
+        {
+            "name": "Ralph Morris",
+            "email": "ralph@10degrees.uk"
+        },
+        {
             "name": "Matt Radford",
             "email": "matt@10degrees.uk"
         }
     ],
     "minimum-stability": "dev",
     "require": {
-        "philcook/gtmetrix": "^1.0",
-        "afragen/github-updater": "dev-master"
+        "philcook/gtmetrix": "^1.0"
     }
 }
