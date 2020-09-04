@@ -2,7 +2,7 @@
 /*
 * Plugin Name: 10 Degrees WordCare
 * Description: Management and reporting for 10 Degrees WordCare clients.
-* Version: 1.1.0
+* Version: 1.1.1
 * Author: 10 Degrees
 * Author URI: https://www.10degrees.uk
 * Github Plugin URI: https://github.com/10degrees/10D-wordcare-report
