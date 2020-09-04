@@ -5,7 +5,7 @@
 * Version: 1.1.0
 * Author: 10 Degrees
 * Author URI: https://www.10degrees.uk
-* Bitbucket Plugin URI: https://bitbucket.org/10degrees/10d-wordcare-report
+* Github Plugin URI: https://github.com/10degrees/10D-wordcare-report
 * Text Domain: td
 */
 
