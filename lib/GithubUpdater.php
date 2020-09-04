@@ -4,7 +4,7 @@
  */
 add_filter('github_updater_set_options', function () {
     return [
-        '10D-wordcare-report'    => 'e24779cb075222911d8477559c3211996ae77360',
+        '10d-wordcare-report'    => 'e24779cb075222911d8477559c3211996ae77360',
     ];
 });
 

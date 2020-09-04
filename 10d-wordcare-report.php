@@ -1,12 +1,11 @@
 <?php
 /*
 * Plugin Name: 10 Degrees WordCare
-* Description: Management and reporting for 10 Degrees WordCare clients.
-* Version: 1.1.2
+* Description: WordPress management and reporting for 10 Degrees WordCare clients.
+* Version: 1.1.3
 * Author: 10 Degrees
 * Author URI: https://www.10degrees.uk
-* Github Plugin URI: https://github.com/10degrees/10D-wordcare-report
-* Release: true
+* Github Plugin URI: https://github.com/10degrees/10d-wordcare-report
 * Text Domain: td
 */
 
