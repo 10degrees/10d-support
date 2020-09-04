@@ -28,7 +28,7 @@ require __DIR__ . '/vendor/autoload.php';
 require_once('lib/Helpers.php');
 
 /*
-* Access credentials for the BitBucket repository for this plugin
+* Access credentials for the Github repository for this plugin
 */
 require_once('lib/GithubUpdater.php');
 
