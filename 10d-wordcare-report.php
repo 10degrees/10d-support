@@ -2,7 +2,7 @@
 /*
 * Plugin Name: 10 Degrees WordCare
 * Description: WordPress management and reporting for 10 Degrees WordCare clients.
-* Version: 1.1.6
+* Version: 1.2.0
 * Author: 10 Degrees
 * Author URI: https://www.10degrees.uk
 * Github Plugin URI: https://github.com/10degrees/10d-wordcare-report
@@ -53,3 +53,8 @@ require_once('lib/UpgradeWatcher.php');
 require_once('lib/ReportDashboardWidget.php');
 require_once('lib/ReportRecipient.php');
 require_once('lib/ReportEmailer.php');
+
+/*
+* Disable WordPress functions
+*/
+require_once('lib/Disable.php');

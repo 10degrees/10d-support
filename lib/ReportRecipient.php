@@ -1,8 +1,4 @@
 <?php
-
-/**
-*
-*/
 class ReportRecipient
 {
     public $recipientOptionKey = 'td_wordcare_report_recipient_email';
