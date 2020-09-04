@@ -8,6 +8,7 @@ Run `composer install` to install dependencies.
 
 ## Installing the plugin on client websites
 
+0) If the WordCare plugin is already installed and at version 1.1.0 or below, delete the plugin.
 1) Install the latest _Github Updater_ plugin from [https://github.com/afragen/github-updater/releases](https://github.com/afragen/github-updater/releases).
 2) https://github.com/10degrees/10d-wordcare-report
 
