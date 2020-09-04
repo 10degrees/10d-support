@@ -23,8 +23,8 @@ if (!function_exists('dd')) {
  * @param  array  $vars
  * @return string
  */
-if (!function_exists('td_view')) {
-    function td_view($fileName, $vars = array())
+if (!function_exists('td_wc_view')) {
+    function td_wc_view($fileName, $vars = array())
     {
         foreach ($vars as $key => $value) {
             ${$key} = $value;
@@ -41,8 +41,8 @@ if (!function_exists('td_view')) {
  * @param  string $filePath - Optional
  * @return string - path to file (or just directory)
  */
-if (!function_exists('td_img_path')) {
-    function td_img_path($filePath = '')
+if (!function_exists('td_wc_img_path')) {
+    function td_wc_img_path($filePath = '')
     {
         return plugins_url() . '/10d-wordcare-report/assets/' . $filePath;
     }
@@ -54,10 +54,10 @@ if (!function_exists('td_img_path')) {
  * @param  $svg string fileName
  * @return string - svg code
  */
-if (!function_exists('td_get_svg')) {
-    function td_get_svg($svg)
+if (!function_exists('td_wc_get_svg')) {
+    function td_wc_get_svg($svg)
     {
-        return td_print_svg(td_img_path($svg));
+        return td_wc_print_svg(td_wc_img_path($svg));
     }
 }
 
@@ -67,8 +67,8 @@ if (!function_exists('td_get_svg')) {
  * @param  string $icon Path to file
  * @return string - svg code
  */
-if (!function_exists('td_print_svg')) {
-    function td_print_svg($icon)
+if (!function_exists('td_wc_print_svg')) {
+    function td_wc_print_svg($icon)
     {
         if (false !== strpos($icon, '.svg')) {
             $icon = str_replace(site_url(), '', $icon);

@@ -9,7 +9,7 @@ function td_plugin_report_dashboard_display() {
 
         $count = count($log);
 
-        echo td_view('plugin-update-log', array(
+        echo td_wc_view('plugin-update-log', array(
           'count' => $count,
           'log' => $log,
         ));
@@ -31,7 +31,7 @@ function td_plugin_report_dashboard_display() {
 
         $count = count($log);
 
-        echo td_view('core-update-log', array(
+        echo td_wc_view('core-update-log', array(
           'count' => $count,
           'log' => $log,
         ));
@@ -88,7 +88,7 @@ function td_plugin_report_dashboard_display() {
 
     if ($testResults && ($NewTestRequired == FALSE) ) {
 
-        echo td_view('gt-metrix-overview', array('testResults' => $testResults));
+        echo td_wc_view('gt-metrix-overview', array('testResults' => $testResults));
 
     } else {
 
@@ -99,7 +99,7 @@ function td_plugin_report_dashboard_display() {
 
     $ReportRecipient = new ReportRecipient;
 
-    echo td_view('update-email-recipient', array('currentEmail' => $ReportRecipient->getReportRecipient()));
+    echo td_wc_view('update-email-recipient', array('currentEmail' => $ReportRecipient->getReportRecipient()));
 
 
     /* Give 10d Users the ability to clear the log by emptying the option */
