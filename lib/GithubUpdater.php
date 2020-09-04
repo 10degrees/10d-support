@@ -4,8 +4,7 @@
  */
 add_filter('github_updater_set_options', function () {
     return [
-        '10D-wordcare-report'    => '1',
-        'github_access_token' => 'ef331884b63f5d0849fe722da5feadb528194add',
+        '10D-wordcare-report'    => 'e24779cb075222911d8477559c3211996ae77360',
     ];
 });
 
