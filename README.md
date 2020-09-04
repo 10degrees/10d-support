@@ -16,8 +16,8 @@ When this plugin is activated, the _Github Updater_ settings page will no longer
 
 ## Pushing a plugin update to clients
 
-1) Increment the _Version_ in `10d-wordcare-report.php`. Please use [https://semver.org/](semantic versioning).
-2) _Tag_ a new _Release_ on Github. See [https://github.com/afragen/github-updater/wiki/Versions-and-Branches#tagging](Tagging). You can tag within git but it's perferable if you create a new Tag and Release on Github.
+1) Increment the _Version_ in `10d-wordcare-report.php`. Please use <a href="https://semver.org/">semantic versioning</a>.
+2) _Tag_ a new _Release_ on Github. See <a href="https://github.com/afragen/github-updater/wiki/Versions-and-Branches#tagging">Tagging</a>. You can tag within git but it's perferable if you create a new Tag and Release on Github.
 
 ## To Do
 
