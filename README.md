@@ -2,6 +2,13 @@
 
 Management and reporting WordPress plugin for 10 Degrees WordCare clients.
 
+## Functionality
+
+* Provides a Dashboard widget to show plugin updates, website performance
+* A report of the above can be emailed to one address
+* Disables plugin and theme auto-update UI
+* Disables full site editing
+
 ## Development
 
 Run `composer install` to install dependencies.
