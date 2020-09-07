@@ -33,16 +33,20 @@ function td_plugin_report_dashboard_display()
     $WP_version = get_bloginfo('version');
     $url = 'https://api.wordpress.org/core/version-check/1.7/';
     $response = wp_remote_get($url);
-    $json = $response['body'];
-    $obj = json_decode($json);
-    $upgrade = $obj->offers[0];
+    if (is_array($response) && !is_wp_error($response)) {
+        $json = $response['body'];
+        $obj = json_decode($json);
+        $upgrade = $obj->offers[0];
 
-    if ($WP_version == $upgrade->version) {
-        echo '<p>
-            <svg class="tend-icon" fill="#32bd32" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-            <path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"></path>
-            </svg>';
-        echo ' You are running the latest version of WordPress (' . $WP_version . ').</p>';
+        error_log(json_encode($response));
+    
+        if ($WP_version == $upgrade->version) {
+            echo '<p>
+                <svg class="tend-icon" fill="#32bd32" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"></path>
+                </svg>';
+            echo ' You are running the latest version of WordPress (' . $WP_version . ').</p>';
+        }
     }
 
     // Check for SSL and display
