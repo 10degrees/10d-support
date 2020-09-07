@@ -33,16 +33,18 @@ function td_plugin_report_dashboard_display()
     $WP_version = get_bloginfo('version');
     $url = 'https://api.wordpress.org/core/version-check/1.7/';
     $response = wp_remote_get($url);
-    $json = $response['body'];
-    $obj = json_decode($json);
-    $upgrade = $obj->offers[0];
-
-    if ($WP_version == $upgrade->version) {
-        echo '<p>
-            <svg class="tend-icon" fill="#32bd32" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-            <path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"></path>
-            </svg>';
-        echo ' You are running the latest version of WordPress (' . $WP_version . ').</p>';
+    if (is_array($response) && !is_wp_error($response)) {
+        $json = $response['body'];
+        $obj = json_decode($json);
+        $upgrade = $obj->offers[0];
+    
+        if ($WP_version == $upgrade->version) {
+            echo '<p>
+                <svg class="tend-icon" fill="#32bd32" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"></path>
+                </svg>';
+            echo ' You are running the latest version of WordPress (' . $WP_version . ').</p>';
+        }
     }
 
     // Check for SSL and display
@@ -59,12 +61,15 @@ function td_plugin_report_dashboard_display()
     echo '<hr /><h3>Monthly Performance Report</h3>';
 
     $testResults = get_option('td_GT_metrix_test');
-    $timeOfTest = $testResults['timeStamp'];
+    if ($testResults) {
+        $timeOfTest = $testResults['timeStamp'];
 
-    if ($timeOfTest < (time() - (7 * 24 * 60 * 60))) {
-        $NewTestRequired = true;
+        if ($timeOfTest < (time() - (7 * 24 * 60 * 60))) {
+            $NewTestRequired = true;
+        }
     }
 
+    
     if ($testResults && ($NewTestRequired == false)) {
         echo td_wc_view('gt-metrix-overview', array('testResults' => $testResults));
     } else {
@@ -83,6 +88,12 @@ function td_plugin_report_dashboard_display()
         <p>Removes all entries older than 2 months</p>
         <p>
         <a class="button button-primary" href="?clear-the-update-log-10d" class="clear-log">Tidy Up Log</a>
+        </p>';
+        
+        echo '<hr /><h3>Send Client Report</h3><p>
+        <p>Send the report to the client</p>
+        <p>
+        <a class="button button-primary" href="?iewrgfiy2498yr42igr24igiojfoeifbfei88s" class="clear-log">Send Report</a>
         </p>';
     }
 }
