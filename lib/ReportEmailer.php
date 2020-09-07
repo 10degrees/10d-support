@@ -21,10 +21,10 @@ function td_email_the_report()
 add_action('init', 'td_email_the_report');
 
 // define the wp_mail_failed callback
-function action_wp_mail_failed($wp_error)
+function td_wc_action_wp_mail_failed($wp_error)
 {
     return error_log(print_r($wp_error, true));
 }
 
 // add the action
-add_action('wp_mail_failed', 'action_wp_mail_failed', 10, 1);
+add_action('wp_mail_failed', 'td_wc_action_wp_mail_failed', 10, 1);
