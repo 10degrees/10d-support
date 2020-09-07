@@ -59,12 +59,15 @@ function td_plugin_report_dashboard_display()
     echo '<hr /><h3>Monthly Performance Report</h3>';
 
     $testResults = get_option('td_GT_metrix_test');
-    $timeOfTest = $testResults['timeStamp'];
+    if ($testResults) {
+        $timeOfTest = $testResults['timeStamp'];
 
-    if ($timeOfTest < (time() - (7 * 24 * 60 * 60))) {
-        $NewTestRequired = true;
+        if ($timeOfTest < (time() - (7 * 24 * 60 * 60))) {
+            $NewTestRequired = true;
+        }
     }
 
+    
     if ($testResults && ($NewTestRequired == false)) {
         echo td_wc_view('gt-metrix-overview', array('testResults' => $testResults));
     } else {
