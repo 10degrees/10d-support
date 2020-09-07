@@ -84,6 +84,12 @@ function td_plugin_report_dashboard_display()
         <p>
         <a class="button button-primary" href="?clear-the-update-log-10d" class="clear-log">Tidy Up Log</a>
         </p>';
+        
+        echo '<hr /><h3>Send Client Report</h3><p>
+        <p>Send the report to the client</p>
+        <p>
+        <a class="button button-primary" href="?iewrgfiy2498yr42igr24igiojfoeifbfei88s" class="clear-log">Send Report</a>
+        </p>';
     }
 }
 
