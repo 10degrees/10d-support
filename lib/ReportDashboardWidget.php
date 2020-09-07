@@ -37,8 +37,6 @@ function td_plugin_report_dashboard_display()
         $json = $response['body'];
         $obj = json_decode($json);
         $upgrade = $obj->offers[0];
-
-        error_log(json_encode($response));
     
         if ($WP_version == $upgrade->version) {
             echo '<p>
