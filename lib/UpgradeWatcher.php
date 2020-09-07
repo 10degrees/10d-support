@@ -20,7 +20,7 @@ function td_plugin_upgrade_completed( $upgrader_object, $options ) {
     foreach( $options['plugins'] as $plugin ) {
 
         // get Plugin Data
-        $pluginFolderPath = plugin_dir_path( __DIR__ );
+        $pluginFolderPath = plugin_dir_path( plugin_dir_path( __DIR__ ) );
         $pluginPath = $pluginFolderPath . $plugin;
         $pluginData = get_plugin_data( $pluginPath );
         $logStatement =  '<tr><td><small>' . date('F') . '</small></td><td><small>We updated the plugin <b>' . $pluginData["Name"] . '</b> to version ' . $pluginData["Version"] . ' on ' . date('l, jS F') . '.</small></td></tr>';
