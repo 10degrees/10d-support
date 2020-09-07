@@ -15,6 +15,10 @@
         {
             "name": "Matt Radford",
             "email": "matt@10degrees.uk"
+        },
+        {
+            "name": "Alice Williams",
+            "email": "alice@10degrees.uk"
         }
     ],
     "minimum-stability": "dev",
