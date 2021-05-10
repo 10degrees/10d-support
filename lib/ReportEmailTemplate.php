@@ -104,7 +104,7 @@
 <!-- HEADER -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
-        <td bgcolor="#bb272c" align="center">
+        <td  align="center">
             <!--[if (gte mso 9)|(IE)]>
             <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
             <tr>
@@ -114,30 +114,7 @@
                 <tr>
                     <td align="center" valign="top" style="padding: 15px 0;" class="logo">
                         <a href="https://www.10degrees.uk/?utm_source=wordcare_report&utm_medium=email" target="_blank">
-                          <svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-                      <defs>
-                          <polygon id="path-1" points="0 71.9831907 0 0.0409027237 71.9596576 0.0409027237 71.9596576 71.9831907"></polygon>
-                      </defs>
-                      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                          <g id="Light-Header" transform="translate(0.000000, -1.000000)">
-                              <g id="Nav">
-                                  <g id="10-logo-white" transform="translate(0.000000, 1.000000)">
-                                      <path d="M61.6179922,12.0242802 C63.2260856,12.0242802 64.5290895,13.3284047 64.5290895,14.9353774 C64.5290895,16.5426304 63.2260856,17.8467549 61.6179922,17.8467549 C60.0098988,17.8467549 58.7068949,16.5426304 58.7068949,14.9353774 C58.7068949,13.3284047 60.0098988,12.0242802 61.6179922,12.0242802 Z M55.9501634,14.9891673 C55.9501634,18.1067393 58.4763268,20.6331829 61.5936187,20.6331829 C64.7092296,20.6331829 67.2359533,18.1067393 67.2359533,14.9891673 C67.2359533,11.872716 64.7092296,9.34627237 61.5936187,9.34627237 C58.4763268,9.34627237 55.9501634,11.872716 55.9501634,14.9891673 L55.9501634,14.9891673 Z" id="Fill-1" fill="#FFFFFE"></path>
-                                      <g id="Group-5">
-                                          <mask id="mask-2" fill="white">
-                                              <use xlink:href="#path-1"></use>
-                                          </mask>
-                                          <g id="Clip-3"></g>
-                                          <path d="M41.3663813,27.6423969 C39.0237198,27.6423969 37.2559377,28.4509261 36.0638755,30.0677043 C35.069323,31.4174942 34.5717665,33.1779922 34.5717665,35.3475175 C34.5717665,37.8493074 34.970428,39.6983346 35.7657899,40.8937588 C36.8696031,42.555642 38.9144591,43.3857432 41.896716,43.3857432 C44.4161556,43.3857432 46.1836576,42.5763735 47.2006226,40.9615564 C47.9962646,39.6983346 48.392965,37.8268949 48.392965,35.3475175 C48.392965,33.0670506 47.8522646,31.2519222 46.7691829,29.9012918 C45.5527471,28.3954553 43.7524669,27.6423969 41.3663813,27.6423969" id="Fill-2" fill="#FFFFFE" mask="url(#mask-2)"></path>
-                                          <path d="M67.9677198,19.5358132 C67.1986926,20.6110506 66.1665992,21.4854163 64.9641712,22.0611362 C67.1317354,26.3788949 68.3543346,31.2494008 68.3543346,36.4011829 C68.3543346,54.084607 53.9677821,68.4711595 36.2837977,68.4711595 C18.5992529,68.4711595 4.21185992,54.084607 4.21185992,36.4011829 C4.21185992,18.7174786 18.5992529,4.33064591 36.2837977,4.33064591 C43.3420389,4.33064591 49.8735875,6.62428016 55.1760934,10.503035 C55.9790195,9.35803891 57.079751,8.43772763 58.3653852,7.85388327 C52.2210117,2.96404669 44.44193,0.0409027237 35.9789883,0.0409027237 C16.1083891,0.0409027237 0,16.1501323 0,36.021572 C0,55.8916109 16.1083891,72 35.9789883,72 C55.8512685,72 71.9596576,55.8916109 71.9596576,36.021572 C71.9596576,30.079751 70.5182568,24.474677 67.9677198,19.5358132" id="Fill-4" fill="#FFFFFE" mask="url(#mask-2)"></path>
-                                      </g>
-                                      <path d="M54.293323,35.4808716 C54.293323,39.9944591 53.0441089,43.2246537 50.5484825,45.1722957 C48.5142724,46.7422879 45.5527471,47.528965 41.6647471,47.528965 C37.3567938,47.528965 34.1750661,46.6209805 32.1198444,44.8066926 C29.8654319,42.8156265 28.7392062,39.6182101 28.7392062,35.2158444 C28.7392062,31.6099611 29.7441245,28.7991595 31.7542412,26.7854008 C33.9428171,24.595144 37.2125136,23.5000156 41.565572,23.5000156 C46.3604358,23.5000156 49.7413541,24.5503191 51.7077665,26.6523268 C53.4304436,28.5114397 54.293323,31.4539144 54.293323,35.4808716 Z M20.1389883,47.0975253 L26.3702101,47.0975253 L26.3702101,23.9297743 L20.1389883,23.9297743 L20.1389883,47.0975253 Z M36.2837977,7.61771206 C20.4118599,7.61771206 7.49892607,20.5298054 7.49892607,36.4011829 C7.49892607,52.2717198 20.4118599,65.1838132 36.2837977,65.1838132 C52.1548949,65.1838132 65.0672685,52.2717198 65.0672685,36.4011829 C65.0672685,31.4936965 63.8317821,26.8702879 61.6569339,22.8228794 C61.6359222,22.8231595 61.6149105,22.8245603 61.5938988,22.8245603 C57.2733385,22.8245603 53.7585058,19.3097276 53.7585058,14.9891673 C53.7585058,14.5280311 53.8008093,14.0767004 53.877572,13.6374163 C49.0093074,9.86596109 42.9044358,7.61771206 36.2837977,7.61771206 L36.2837977,7.61771206 Z" id="Fill-6" fill="#FFFFFE"></path>
-                                  </g>
-                              </g>
-                          </g>
-                      </g>
-                  </svg>
+                            <svg viewBox="0 0 312.01 142.03" xmlns="http://www.w3.org/2000/svg"><g fill="#14113f"><path d="m0 54.14h16.82v-25.5h21.7v25.5h25.86v19.53h-25.86v34.54c0 10.49 5.42 13.56 11.21 13.56a17.19 17.19 0 0 0 9-3.07l8 17.72a39 39 0 0 1 -20.62 5.58c-16.63 0-29.29-12.12-29.29-30.38v-38h-16.82z"/><path d="m162.57 96.64c0 1.62 0 4.88-.19 8.13h-64c1.63 7.6 10.49 17.36 24 17.36 15 0 23.51-8.68 23.51-8.68l10.85 16.28a54.88 54.88 0 0 1 -34.32 12.27c-26 0-46.11-19.9-46.11-45s18.26-45 43-45c23.54 0 43.26 18.23 43.26 44.64zm-21.71-7.64c-.36-7.41-7.23-17.36-21.51-17.36-13.93 0-20.26 9.77-21 17.36z"/><path d="m255.87 84.34v55.52h-21.7v-50.1c0-12.29-7.6-17.54-17-17.54-11.21 0-17 11-17 11v56.61h-21.7v-85.69h20.25v12.48a29.63 29.63 0 0 1 25.68-14.62c16.6 0 31.47 11.72 31.47 32.34z"/></g><path d="m285 11.24-9.9 14.24a2.82 2.82 0 0 0 -.41 2.29l4.4 16.76a2.44 2.44 0 0 0 4.37.77l9.86-14.24a2.78 2.78 0 0 0 .4-2.29l-4.4-16.77a2.43 2.43 0 0 0 -4.32-.76zm-1.09-11.24a28.35 28.35 0 1 1 -28.09 28.34 28.22 28.22 0 0 1 28.09-28.34z" fill="#6bc9a5"/></svg>
                         </a>
                     </td>
                 </tr>
@@ -374,12 +351,7 @@
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-bottom: 20px; max-width: 500px;" class="responsive-table">
                 <!-- TITLE -->
                 <tr>
-                    <td align="center" style="padding: 0 0 10px 0; font-size: 25px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="padding" colspan="2">What's New at 10°</td>
-                </tr>
-                <tr>
-                    <td align="center" style="padding:10px;" class="padding" colspan="2"><a href="https://www.10degrees.uk/blog/?utm_source=wordcare_report&utm_medium=email">
-                      <img style="max-width:500%; width:100%; height:auto" src="https://10degrees.uk/wp-content/uploads/2017/06/10d-team.jpg" alt="Picture of the 10 Degrees team" />
-                    </a></td>
+                    <td align="center" style="padding: 0 0 10px 0; font-size: 25px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="padding" colspan="2">What's New at 10 Degrees</td>
                 </tr>
                 <tr>
                     <td align="center">
@@ -388,7 +360,7 @@
                                 <td align="center" style="padding-top: 25px;" class="padding">
                                     <table border="0" cellspacing="0" cellpadding="0" class="mobile-button-container">
                                         <tr>
-                                          <td align="center" style="border-radius: 3px;" bgcolor="#bb272c"><a href="https://www.10degrees.uk/blog/?utm_source=wordcare_report&utm_medium=email" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #bb272c; display: inline-block;" class="mobile-button">Check out our blog for the latest updates and news from the 10° team &rarr;</a></td>
+                                          <td align="center" style="border-radius: 3px;" bgcolor="#62CBA3"><a href="https://www.10degrees.uk/blog/?utm_source=wordcare_report&utm_medium=email" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #62CBA3; display: inline-block;" class="mobile-button">Check out our latest updates and news from the 10 Degrees team &rarr;</a></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -412,7 +384,7 @@
             <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="max-width: 500px;" class="responsive-table">
                 <tr>
                     <td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
-                        <a href="https://www.10degrees.uk/?utm_source=wordcare_report&utm_medium=email">10° WordPress Specialists</a><br />
+                        <a href="https://www.10degrees.uk/?utm_source=wordcare_report&utm_medium=email">10 Degrees WordPress Specialists</a><br />
                         <?php $sitename = get_bloginfo('url'); ?>
                         <a href="mailto:support@10degrees.uk?subject=Cancel%20Report%20for%20<?php echo $sitename; ?>&body=Please%20do%20not%20send%20me%20this%20report%20anymore">I do not wish to recieve this report</a>
                     </td>
