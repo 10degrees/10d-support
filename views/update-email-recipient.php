@@ -21,4 +21,10 @@
 
 </form>
 
+<?php
+if (isset($_POST[ 'save' ])) {
+    echo "Email updated successfully";
+}
+?>
+
 <br>
