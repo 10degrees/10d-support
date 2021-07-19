@@ -27,7 +27,7 @@ function td_plugin_report_dashboard_display()
           'log' => $log,
         ));
     } else {
-        echo 'No Plugin Updates in the log at the moment. ';
+        echo '<p>No Plugin Updates in the log at the moment.</p>';
     }
 
     // Table for WordPress Theme Updates Log

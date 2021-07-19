@@ -63,15 +63,12 @@ function td_plugin_upgrade_completed( $upgrader_object, $options ) {
         foreach ($options['themes'] as $themeName) {
             $themeData = wp_get_theme($themeName);
             if ($themeData->exists()) {
-                $logStatement =  '<tr><td colspan="3"><small>We updated the theme <b>' . $themeData->get('Name') . '</b> to version '. $themeData['Version'] .' on ' . date('l, jS F') . '.</small></td></tr>';
+                $logStatement =  '<tr><tr><td><small>' . date('F') . '</small></td><td colspan="3"><small>We updated the theme <b>' . $themeData->get('Name') . '</b> to version '. $themeData['Version'] .' on ' . date('l, jS F') . '.</small></td></tr>';
                 array_push($themeUpdates, $logStatement);
             }
         }
 
-        update_option('td_core_update_log' , $themeUpdates);
-
-        error_log('UPDATES: ');
-        error_log(json_encode(get_option('td_core_update_log')));
+        update_option('td_theme_update_log' , $themeUpdates);
     }
 
 }
