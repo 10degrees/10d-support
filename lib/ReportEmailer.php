@@ -12,7 +12,7 @@ function td_email_the_report()
             $subject = date('F') . ' Activity Report for ' . $sitename;
             ob_start();
             require_once(ABSPATH . '/wp-content/plugins/10d-wordcare-report/lib/ReportEmailTemplate.php');
-            $message = ob_get_contents();
+            $message = ob_get_clean();
             $headers = array('Content-Type: text/html; charset=UTF-8' , 'Bcc: reports@10degrees.uk ');
             wp_mail($to, $subject, $message, $headers);
         }
