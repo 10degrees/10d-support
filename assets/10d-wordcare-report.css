@@ -58,7 +58,7 @@
       font-size:14px;
   }
 
-  .wp-core-ui .button-primary {
+  #td_plugin_report_dashboard_widget .button-primary {
       background: #14113f;
       border-color: #14113f;
       color: #fff;
@@ -66,32 +66,32 @@
       text-shadow: none;
   }
 
-  .wp-core-ui .button-primary:hover,
-  .wp-core-ui .button-primary:focus
+  #td_plugin_report_dashboard_widget .button-primary:hover,
+  #td_plugin_report_dashboard_widget .button-primary:focus
   {
       background: #6bc9a5;
       border-color: #14113f;
   }
 
   
-  .td_contact_details {
+  #td_plugin_report_dashboard_widget .td_contact_details {
       font-weight: bold;
       display: flex;
   }
 
-  .td_contact_details svg {
+  #td_plugin_report_dashboard_widget .td_contact_details svg {
       margin-right: 5px;
   }
 
-  .td_contact_details a {
+  #td_plugin_report_dashboard_widget .td_contact_details a {
       margin-left: 2px;
       color: #14113f;
   }
-  .td_contact_details a:hover {
+  #td_plugin_report_dashboard_widget .td_contact_details a:hover {
       color: #6bc9a5;
   }
 
-  .td-email-updated {
+  #td_plugin_report_dashboard_widget .td-email-updated {
       background-color: #6bc9a5;
       padding: 5px;
       color: #14113f;
