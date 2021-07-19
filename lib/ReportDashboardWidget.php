@@ -27,7 +27,19 @@ function td_plugin_report_dashboard_display()
           'log' => $log,
         ));
     } else {
-        echo 'No Plugin Updates in the log at the moment. ';
+        echo '<p>No Plugin Updates in the log at the moment.</p>';
+    }
+
+    // Table for WordPress Theme Updates Log
+    if (!get_option('td_theme_update_log')) {
+        echo '<p>No Theme Updates in the log at the moment.</p>';
+    } else {
+        $log = get_option('td_theme_update_log');
+        $count = count($log);
+        echo td_wc_view('theme-update-log', array(
+            'count' => $count,
+            'log' => $log,
+        ));
     }
 
     // Table for WordPress Core Updates Log

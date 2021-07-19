@@ -6,29 +6,28 @@
  * @param $options Array
  */
 function td_plugin_upgrade_completed( $upgrader_object, $options ) {
-
     // If an update has taken place and the updated type is plugins and the plugins element exists
     if ($options['action'] == 'update' && $options['type'] == 'plugin' ){
 
-    // Iterate through the plugins being updated and check if ours is there
-    if(get_option('td_plugin_update_log')) {
-        $allUpdates = get_option('td_plugin_update_log');
-    } else {
-        $allUpdates = array();
-    }
+        // Iterate through the plugins being updated and check if ours is there
+        if(get_option('td_plugin_update_log')) {
+            $allUpdates = get_option('td_plugin_update_log');
+        } else {
+            $allUpdates = array();
+        }
 
-    foreach( $options['plugins'] as $plugin ) {
+        foreach( $options['plugins'] as $plugin ) {
 
-        // get Plugin Data
-        $pluginFolderPath = plugin_dir_path( plugin_dir_path( __DIR__ ) );
-        $pluginPath = $pluginFolderPath . $plugin;
-        $pluginData = get_plugin_data( $pluginPath );
-        $logStatement =  '<tr><td><small>' . date('F') . '</small></td><td><small>We updated the plugin <b>' . $pluginData["Name"] . '</b> to version ' . $pluginData["Version"] . ' on ' . date('l, jS F') . '.</small></td></tr>';
-        array_push($allUpdates , $logStatement);
+            // get Plugin Data
+            $pluginFolderPath = plugin_dir_path( plugin_dir_path( __DIR__ ) );
+            $pluginPath = $pluginFolderPath . $plugin;
+            $pluginData = get_plugin_data( $pluginPath );
+            $logStatement =  '<tr><td><small>' . date('F') . '</small></td><td><small>We updated the plugin <b>' . $pluginData["Name"] . '</b> to version ' . $pluginData["Version"] . ' on ' . date('l, jS F') . '.</small></td></tr>';
+            array_push($allUpdates , $logStatement);
 
-    }
+        }
 
-    update_option('td_plugin_update_log' , $allUpdates);
+        update_option('td_plugin_update_log' , $allUpdates);
 
     } elseif ( $options['action'] == 'update' && $options['type'] == 'core' ) {
 
@@ -50,6 +49,26 @@ function td_plugin_upgrade_completed( $upgrader_object, $options ) {
 
         update_option('td_core_update_log' , $allUpdates);
 
+    } elseif ( $options['action'] == 'update' && $options['type'] == 'theme' ) {
+        if(get_option('td_theme_update_log')){
+
+            $themeUpdates = get_option('td_theme_update_log');
+
+        } else {
+
+            $themeUpdates = array();
+
+        }
+
+        foreach ($options['themes'] as $themeName) {
+            $themeData = wp_get_theme($themeName);
+            if ($themeData->exists()) {
+                $logStatement =  '<tr><tr><td><small>' . date('F') . '</small></td><td colspan="3"><small>We updated the theme <b>' . $themeData->get('Name') . '</b> to version '. $themeData['Version'] .' on ' . date('l, jS F') . '.</small></td></tr>';
+                array_push($themeUpdates, $logStatement);
+            }
+        }
+
+        update_option('td_theme_update_log' , $themeUpdates);
     }
 
 }
