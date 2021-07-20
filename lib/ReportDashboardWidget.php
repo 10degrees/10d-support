@@ -120,6 +120,10 @@ function td_plugin_report_dashboard_display()
         <p>
         <a class="button button-primary" href="?iewrgfiy2498yr42igr24igiojfoeifbfei88s" class="clear-log">Send Report</a>
         </p>';
+
+        if (isset($_GET[ 'iewrgfiy2498yr42igr24igiojfoeifbfei88s' ])) {
+            echo "<p class='td-notification'>Report sent to client</p>";
+        }
     }
 }
 

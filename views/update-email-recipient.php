@@ -23,7 +23,7 @@
 
 <?php
 if (isset($_POST[ 'save' ])) {
-    echo "<p class='td-email-updated'>Email updated successfully</p>";
+    echo "<p class='td-notification'>Email updated successfully</p>";
 }
 ?>
 
