@@ -297,6 +297,57 @@
 
 <?php } ?>
 
+<?php $themeLog = get_option('td_theme_update_log'); if($themeLog) { ?>
+
+<tr>
+    <td bgcolor="#F5F7FA" align="center" style="padding: 70px 15px 70px 15px;" class="section-padding">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+        <tr>
+        <td align="center" valign="top" width="500">
+        <![endif]-->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="responsive-table">
+            <tr>
+                <td>
+                    <!-- TITLE SECTION AND COPY -->
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td align="center" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333;" class="padding">Recent Theme Updates</td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="padding: 20px 0 20px 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding">Here are the themes we have updated for you.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            </table>
+
+            <table border="0" cellpadding="10" cellspacing="0" width="100%" style="max-width: 500px; padding: 0 0 10px 0; font-size: 14px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="responsive-table">
+              <?php
+
+
+
+
+              $count = count($themeLog);
+
+              echo '<th style="text-align: left;">Month</th><th style="text-align: left;">Theme Updates Completed ('.$count.')</th>';
+
+              $newestFirst = array_reverse($themeLog);
+
+              foreach($newestFirst as $entry){
+                echo $entry;
+              }
+
+              ?>
+
+            </table>
+
+    </td>
+</tr>
+
+<?php } ?>
+
 
     <?php $PageSpeed = get_option('td_GT_metrix_test');
 
