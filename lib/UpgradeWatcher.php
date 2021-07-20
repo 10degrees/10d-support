@@ -88,64 +88,45 @@ function td_clear_the_plugin_log() {
 
         if(isset($_REQUEST["clear-the-update-log-10d"])) {
 
-            // Clear Plugin Log
-
-            $allUpdates = get_option('td_plugin_update_log');
-
-            // Search
-            foreach($allUpdates as $logEntry => $value) {
-
-                if (strpos($value, date('F')) !== false) {
-
-                    // echo date('F');
-                    //keep this Entry as it is from this month
-
-                } elseif (strpos($value, date("F",strtotime("-1 month"))) !== false) {
-
-                    // echo date("F",strtotime("-1 month"));
-                    //keep this Entry as it is from last month
-
-                } else {
-
-                    unset($allUpdates[$logEntry]);
-
-                }
-
-            }
-
-            update_option('td_plugin_update_log' , $allUpdates);
-
-            // Clear the core log
-
-            $allCoreUpdates = get_option('td_core_update_log');
-
-            // Search
-            foreach($allCoreUpdates as $logEntry => $value) {
-
-                if (strpos($value, date('F')) !== false) {
-
-                    // echo date('F');
-                    //keep this Entry as it is from this month
-
-                } elseif (strpos($value, date("F",strtotime("-1 month"))) !== false) {
-
-                    // echo date("F",strtotime("-1 month"));
-                    // keep this Entry as it is from last month
-
-                } else {
-
-                    unset($allCoreUpdates[$logEntry]);
-
-                }
-
-            }
-
-            update_option('td_core_update_log' , $allCoreUpdates);
-
-
+            td_clear_log('td_plugin_update_log'); // Plugins
+            td_clear_log('td_core_update_log'); // Core
+            td_clear_log('td_theme_update_log'); // Themes
         }
 
     }
 
 }
 add_action('admin_init', 'td_clear_the_plugin_log');
+
+/**
+ * Clear all entries older than 2 months from the database
+ *
+ * @param   string  $logOptionName  Option key for the log entries
+ *
+ * @return  void
+ */
+function td_clear_log($logOptionName)
+{
+    $logEntries = get_option($logOptionName) ? get_option($logOptionName) : [];
+
+    // Search
+    foreach($logEntries as $logEntry => $value) {
+
+        if (strpos($value, date('F')) !== false) {
+
+            //keep this Entry as it is from this month
+
+        } elseif (strpos($value, date("F",strtotime("-1 month"))) !== false) {
+
+            // keep this Entry as it is from last month
+
+        } else {
+
+            unset($logEntries[$logEntry]);
+
+        }
+
+    }
+
+    update_option($logOptionName , $logEntries);
+}
