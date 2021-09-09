@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 /**
  * Plugin's self directory 
 */
-define( 'TEND_PLUGIN_DIR', plugin_dir_path( dirname( __FILE__ ) ) );
+define( 'TEND_PLUGIN_DIR', plugin_dir_url( __FILE__ ) );
 
 /**
  * Composer
