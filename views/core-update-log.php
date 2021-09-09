@@ -1,10 +1,10 @@
-<h3>WordPress Core Updates</h3>
+<h3>WordPress core updates</h3>
 
 <div class="table-holder">
   <table>
     <tbody>
       <th style="text-align: left;">
-          Recent Core Updates (<?php echo $count ?>)
+          Recent core updates (<?php echo $count ?>)
 
           <a target="_blank" href="https://www.10degrees.uk/">
 

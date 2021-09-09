@@ -1,4 +1,4 @@
-<h3>Theme Updates</h3>
+<h3>Theme updates</h3>
 
 <div class="table-holder">
   <table class="theme-update-table">

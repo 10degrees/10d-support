@@ -17,6 +17,11 @@ if (!defined('ABSPATH')) {
 }
 
 /**
+ * Plugin's self directory 
+*/
+define( 'TEND_PLUGIN_DIR', plugin_dir_path( dirname( __FILE__ ) ) );
+
+/**
  * Composer
  */
 require __DIR__ . '/vendor/autoload.php';

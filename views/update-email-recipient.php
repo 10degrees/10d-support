@@ -1,6 +1,6 @@
 <hr>
 
-<h3>Update Report Recipient Email</h3>
+<h3>Update report recipient email</h3>
 
 <form action="" method="POST">
 

@@ -27,12 +27,12 @@ function td_plugin_report_dashboard_display()
           'log' => $log,
         ));
     } else {
-        echo '<p>No Plugin Updates in the log at the moment.</p>';
+        echo '<p>No plugin updates in the log at the moment.</p>';
     }
 
     // Table for WordPress Theme Updates Log
     if (!get_option('td_theme_update_log')) {
-        echo '<p>No Theme Updates in the log at the moment.</p>';
+        echo '<p>No theme updates in the log at the moment.</p>';
     } else {
         $log = get_option('td_theme_update_log');
         $count = count($log);
@@ -44,7 +44,7 @@ function td_plugin_report_dashboard_display()
 
     // Table for WordPress Core Updates Log
     if (!get_option('td_core_update_log')) {
-        echo '<p>No WordPress Core Updates in the log at the moment.</p>';
+        echo '<p>No WordPress core updates in the log at the moment.</p>';
     } else {
         $log = get_option('td_core_update_log');
         $count = count($log);
@@ -109,16 +109,16 @@ function td_plugin_report_dashboard_display()
     /* Give 10d Users the ability to clear the log by emptying the option */
     $current_user = wp_get_current_user();
     if (strpos($current_user->user_email, '@10degrees.uk') !== false) {
-        echo '<hr /><h3>Tidy Log</h3><p>
+        echo '<hr /><h3>Tidy log</h3><p>
         <p>Removes all entries older than 2 months</p>
         <p>
-        <a class="button button-primary" href="?clear-the-update-log-10d" class="clear-log">Tidy Up Log</a>
+        <a class="button button-primary" href="?clear-the-update-log-10d" class="clear-log">Tidy up log</a>
         </p>';
         
-        echo '<hr /><h3>Send Client Report</h3><p>
+        echo '<hr /><h3>Send client report</h3><p>
         <p>Send the report to the client</p>
         <p>
-        <a class="button button-primary" href="?iewrgfiy2498yr42igr24igiojfoeifbfei88s" class="clear-log">Send Report</a>
+        <a class="button button-primary" href="?iewrgfiy2498yr42igr24igiojfoeifbfei88s" class="clear-log">Send report</a>
         </p>';
 
         if (isset($_GET[ 'iewrgfiy2498yr42igr24igiojfoeifbfei88s' ])) {

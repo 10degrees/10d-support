@@ -29,7 +29,7 @@ if (!function_exists('td_wc_view')) {
 if (!function_exists('td_wc_img_path')) {
     function td_wc_img_path($filePath = '')
     {
-        return plugins_url() . '/10d-wordcare-report/assets/' . $filePath;
+        return TEND_PLUGIN_DIR . '/assets/' . $filePath;
     }
 }
 

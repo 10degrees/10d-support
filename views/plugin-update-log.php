@@ -1,4 +1,4 @@
-<h3>Plugin Updates</h3>
+<h3>Plugin updates</h3>
 
 <div class="table-holder">
   <table class="plugin-update-table">
@@ -26,7 +26,7 @@
 
 <p>
     <a href="javascript:void();" class="button button-primary tend-download-report-button">
-        Export Report
+        Export report
     </a>
 </p>
 
