@@ -11,7 +11,7 @@ function td_email_the_report()
             $sitename = get_bloginfo('url');
             $subject = date('F') . ' Activity Report for ' . $sitename;
             ob_start();
-            require_once(TEND_PLUGIN_DIR . '/lib/ReportEmailTemplate.php');
+            require_once(plugin_dir_path(__FILE__) . '/ReportEmailTemplate.php');
             $message = ob_get_clean();
             $headers = array('Content-Type: text/html; charset=UTF-8' , 'Bcc: reports@10degrees.uk ');
             wp_mail($to, $subject, $message, $headers);
