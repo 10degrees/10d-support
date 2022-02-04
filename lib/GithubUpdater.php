@@ -4,7 +4,7 @@
  */
 add_filter('github_updater_set_options', function () {
     return [
-        '10d-wordcare-report'    => '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',
+        '10d-wordcare-report'    => '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',
     ];
 });
 
