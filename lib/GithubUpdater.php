@@ -2,7 +2,7 @@
 /**
  * Set access credentials for plugin repository
  */
-add_filter('github_updater_set_options', function () {
+add_filter('gu_set_options', function () {
     return [
         '10d-wordcare-report'    => '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',
     ];
@@ -11,7 +11,7 @@ add_filter('github_updater_set_options', function () {
 /**
  * Remove Github Updater settings page
  */
-add_filter('github_updater_hide_settings', function() {
+add_filter('gu_hide_settings', function() {
     $current_user = wp_get_current_user();
 
     if (!$current_user) {
