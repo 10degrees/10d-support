@@ -1,24 +1,16 @@
 {
-    "name": "10degrees/10d-wordcare-report",
-    "description": "Management and reporting for 10 Degrees WordCare clients.",
+    "name": "10degrees/10d-support-report",
+    "description": "Management and reporting for 10 Degrees Support and maintenance clients.",
     "type": "wordpress-plugin",
     "license": "GPL3",
     "authors": [
         {
-            "name": "Tom Kay",
-            "email": "tom@10degrees.uk"
+            "name": "Jon Benham",
+            "email": "jon@10degrees.uk"
         },
         {
-            "name": "Ralph Morris",
-            "email": "ralph@10degrees.uk"
-        },
-        {
-            "name": "Matt Radford",
-            "email": "matt@10degrees.uk"
-        },
-        {
-            "name": "Alice Williams",
-            "email": "alice@10degrees.uk"
+            "name": "Jonny Vaughan",
+            "email": "jonny@10degrees.uk"
         }
     ],
     "minimum-stability": "dev",

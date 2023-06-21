@@ -18,7 +18,7 @@ class Td_GT_Metrix
         $this->website = $this->website();
 
         $this->client = new GTMetrixClient();
-        $this->client->setUsername('tom@10degrees.uk');
+        $this->client->setUsername('jonny@10degrees.uk');
         $this->client->setAPIKey('49ecea6961d2a267ac442e23d5ef0635');
 
         $this->client->getLocations();

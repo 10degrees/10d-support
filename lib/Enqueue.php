@@ -1,8 +1,8 @@
 <?php
 
-function td_wordcare_assets()
+function td_support_assets()
 {
-    wp_enqueue_style('wordcare-report', TEND_PLUGIN_DIR . '/assets/10d-wordcare-report.css', false);
-    wp_enqueue_script('wordcare-report', TEND_PLUGIN_DIR . '/assets/10d-wordcare-report.js');
+    wp_enqueue_style('support-report', TEND_PLUGIN_DIR . '/assets/10d-support-report.css', false);
+    wp_enqueue_script('support-report', TEND_PLUGIN_DIR . '/assets/10d-support-report.js');
 }
-add_action('admin_enqueue_scripts', 'td_wordcare_assets');
+add_action('admin_enqueue_scripts', 'td_support_assets');

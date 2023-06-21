@@ -7,7 +7,7 @@
     <div class="input-text-wrap">
         <label>
             Email (one only)
-            <input type="text" value="<?php echo esc_html($currentEmail); ?>" name="td_wordcare_report_recipient_email" autocomplete="off">
+            <input type="text" value="<?php echo esc_html($currentEmail); ?>" name="td_support_report_recipient_email" autocomplete="off">
         </label>
     </div>
 
@@ -22,7 +22,7 @@
 </form>
 
 <?php
-if (isset($_POST[ 'save' ])) {
+if (isset($_POST['save'])) {
     echo "<p class='td-notification'>Email updated successfully</p>";
 }
 ?>

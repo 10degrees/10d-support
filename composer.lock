@@ -4,30 +4,30 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1fadb7f8ff5a7021c1c8614fb4a1bb37",
+    "content-hash": "0f12db1b28baa35f0c15bd2fc5f30532",
     "packages": [
         {
             "name": "philcook/gtmetrix",
-            "version": "1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/philcook/php-gtmetrix.git",
-                "reference": "9a5c61449a0a42bc77188e752909608548cf292f"
+                "reference": "9a6bf78c8abd56e0bed0e586d8982b48c4a4a06f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/philcook/php-gtmetrix/zipball/9a5c61449a0a42bc77188e752909608548cf292f",
-                "reference": "9a5c61449a0a42bc77188e752909608548cf292f",
+                "url": "https://api.github.com/repos/philcook/php-gtmetrix/zipball/9a6bf78c8abd56e0bed0e586d8982b48c4a4a06f",
+                "reference": "9a6bf78c8abd56e0bed0e586d8982b48c4a4a06f",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "php": ">=5.3.3"
+                "php": ">=7.3"
             },
             "require-dev": {
                 "apigen/apigen": "~4.1",
-                "phing/phing": "~2.11",
-                "phpunit/phpunit": "~4.6"
+                "phing/phing": "~2.16",
+                "phpunit/phpunit": "~9.5"
             },
             "type": "library",
             "autoload": {
@@ -40,7 +40,10 @@
                 "MIT"
             ],
             "description": "GTMetrix API client for PHP",
-            "time": "2018-05-25T20:33:17+00:00"
+            "support": {
+                "source": "https://github.com/philcook/php-gtmetrix/tree/v1.0.5"
+            },
+            "time": "2021-02-16T20:04:01+00:00"
         }
     ],
     "packages-dev": [],
@@ -51,5 +54,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.3.0"
 }
