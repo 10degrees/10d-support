@@ -2,10 +2,10 @@
 /*
 * Plugin Name: 10 Degrees Support and Maintenance
 * Description: WordPress management and reporting for 10 Degrees support and maintenance clients.
-* Version: 1.7.7
+* Version: 1.7.8
 * Author: 10 Degrees
 * Author URI: https://www.10degrees.uk
-* Github Plugin URI: https://github.com/10degrees/10d-support-report
+* Github Plugin URI: https://github.com/10degrees/10d-wordcare-report
 * Text Domain: td
 */
 
