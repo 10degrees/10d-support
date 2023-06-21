@@ -1,33 +1,32 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => '10degrees/10d-support-report',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => NULL,
+        'type' => 'wordpress-plugin',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
     ),
-    'reference' => 'da15a1c2c77654b6c162dd54619cb04d6b223d50',
-    'name' => '10degrees/10d-wordcare-report',
-  ),
-  'versions' => 
-  array (
-    '10degrees/10d-wordcare-report' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'da15a1c2c77654b6c162dd54619cb04d6b223d50',
+    'versions' => array(
+        '10degrees/10d-support-report' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => NULL,
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'philcook/gtmetrix' => array(
+            'pretty_version' => 'v1.0.5',
+            'version' => '1.0.5.0',
+            'reference' => '9a6bf78c8abd56e0bed0e586d8982b48c4a4a06f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../philcook/gtmetrix',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
     ),
-    'philcook/gtmetrix' => 
-    array (
-      'pretty_version' => '1.0.4',
-      'version' => '1.0.4.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '9a5c61449a0a42bc77188e752909608548cf292f',
-    ),
-  ),
 );

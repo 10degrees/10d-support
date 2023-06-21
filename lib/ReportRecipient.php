@@ -1,7 +1,7 @@
 <?php
 class ReportRecipient
 {
-    public $recipientOptionKey = 'td_wordcare_report_recipient_email';
+    public $recipientOptionKey = 'td_support_report_recipient_email';
 
     public function __construct()
     {

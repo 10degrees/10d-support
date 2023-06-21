@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Create the function to output the contents of our Dashboard Widget.
  */
@@ -6,8 +7,8 @@ function td_plugin_report_dashboard_display()
 {
     $NewTestRequired = null;
 
-    //WordCare Contact Details
-    echo '<h3>WordCare Contact Details</h3>
+    //Support Contact Details
+    echo '<h3>Support Contact Details</h3>
         <h4>Support available Monday-Friday 9am-5pm</h4>
         <p class="td_contact_details">
             <svg class="tend-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 16.42v3.536a1 1 0 0 1-.93.998c-.437.03-.794.046-1.07.046-8.837 0-16-7.163-16-16 0-.276.015-.633.046-1.07A1 1 0 0 1 4.044 3H7.58a.5.5 0 0 1 .498.45c.023.23.044.413.064.552A13.901 13.901 0 0 0 9.35 8.003c.095.2.033.439-.147.567l-2.158 1.542a13.047 13.047 0 0 0 6.844 6.844l1.54-2.154a.462.462 0 0 1 .573-.149 13.901 13.901 0 0 0 4 1.205c.139.02.322.042.55.064a.5.5 0 0 1 .449.498z" fill="#000"/></svg>
@@ -23,8 +24,8 @@ function td_plugin_report_dashboard_display()
     if ($log = get_option('td_plugin_update_log')) {
         $count = count($log);
         echo td_wc_view('plugin-update-log', array(
-          'count' => $count,
-          'log' => $log,
+            'count' => $count,
+            'log' => $log,
         ));
     } else {
         echo '<p>No plugin updates in the log at the moment.</p>';
@@ -49,8 +50,8 @@ function td_plugin_report_dashboard_display()
         $log = get_option('td_core_update_log');
         $count = count($log);
         echo td_wc_view('core-update-log', array(
-          'count' => $count,
-          'log' => $log,
+            'count' => $count,
+            'log' => $log,
         ));
     }
 
@@ -62,7 +63,7 @@ function td_plugin_report_dashboard_display()
         $json = $response['body'];
         $obj = json_decode($json);
         $upgrade = $obj->offers[0];
-    
+
         if ($WP_version == $upgrade->version) {
             echo '<p>
                 <svg class="tend-icon" fill="#32bd32" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -94,7 +95,7 @@ function td_plugin_report_dashboard_display()
         }
     }
 
-    
+
     if ($testResults && ($NewTestRequired == false)) {
         echo td_wc_view('gt-metrix-overview', array('testResults' => $testResults));
     } else {
@@ -114,14 +115,14 @@ function td_plugin_report_dashboard_display()
         <p>
         <a class="button button-primary" href="?clear-the-update-log-10d" class="clear-log">Tidy up log</a>
         </p>';
-        
+
         echo '<hr /><h3>Send client report</h3><p>
         <p>Send the report to the client</p>
         <p>
         <a class="button button-primary" href="?iewrgfiy2498yr42igr24igiojfoeifbfei88s" class="clear-log">Send report</a>
         </p>';
 
-        if (isset($_GET[ 'iewrgfiy2498yr42igr24igiojfoeifbfei88s' ])) {
+        if (isset($_GET['iewrgfiy2498yr42igr24igiojfoeifbfei88s'])) {
             echo "<p class='td-notification'>Report sent to client</p>";
         }
     }
@@ -132,12 +133,12 @@ function td_plugin_report_dashboard_display()
  *
  * This function is hooked into the 'wp_dashboard_setup' action below.
  */
-function td_wordcare_report_dashboard_widget_function()
+function td_support_report_dashboard_widget_function()
 {
     if (current_user_can('manage_options')) {
         wp_add_dashboard_widget(
             'td_plugin_report_dashboard_widget',         // Widget slug.
-            '10 Degrees WordCare',         // Title.
+            '10 Degrees Support',         // Title.
             'td_plugin_report_dashboard_display' // Display function.
         );
         global $wp_meta_boxes;
@@ -147,7 +148,7 @@ function td_wordcare_report_dashboard_widget_function()
         $normal_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
 
         // Backup and delete our new dashboard widget from the end of the array
-        $example_widget_backup = array( 'td_plugin_report_dashboard_widget' => $normal_dashboard['td_plugin_report_dashboard_widget'] );
+        $example_widget_backup = array('td_plugin_report_dashboard_widget' => $normal_dashboard['td_plugin_report_dashboard_widget']);
 
         unset($normal_dashboard['td_plugin_report_dashboard_widget']);
 
@@ -158,4 +159,4 @@ function td_wordcare_report_dashboard_widget_function()
         $wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
     }
 }
-add_action('wp_dashboard_setup', 'td_wordcare_report_dashboard_widget_function');
+add_action('wp_dashboard_setup', 'td_support_report_dashboard_widget_function');

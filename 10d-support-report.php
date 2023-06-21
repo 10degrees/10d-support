@@ -1,11 +1,11 @@
 <?php
 /*
-* Plugin Name: 10 Degrees WordCare
-* Description: WordPress management and reporting for 10 Degrees WordCare clients.
-* Version: 1.7.6
+* Plugin Name: 10 Degrees Support and Maintenance
+* Description: WordPress management and reporting for 10 Degrees support and maintenance clients.
+* Version: 1.7.7
 * Author: 10 Degrees
 * Author URI: https://www.10degrees.uk
-* Github Plugin URI: https://github.com/10degrees/10d-wordcare-report
+* Github Plugin URI: https://github.com/10degrees/10d-support-report
 * Text Domain: td
 */
 
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 
 /**
  * Plugin's self directory
-*/
+ */
 define('TEND_PLUGIN_DIR', plugin_dir_url(__FILE__));
 
 /**
