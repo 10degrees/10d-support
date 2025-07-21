@@ -2,10 +2,10 @@
 /*
 * Plugin Name: 10 Degrees Support and Maintenance
 * Description: WordPress management and reporting for 10 Degrees support and maintenance clients.
-* Version: 1.7.8
+* Version: 1.8.0
 * Author: 10 Degrees
 * Author URI: https://www.10degrees.uk
-* Github Plugin URI: https://github.com/10degrees/10d-wordcare-report
+* Github Plugin URI: https://github.com/10degrees/10d-support-report
 * Text Domain: td
 */
 
@@ -32,11 +32,6 @@ require __DIR__ . '/vendor/autoload.php';
 require_once('lib/Helpers.php');
 
 /*
-* Access credentials for the Github repository for this plugin
-*/
-require_once('lib/GithubUpdater.php');
-
-/*
 * Enqueue assets
 */
 require_once('lib/Enqueue.php');
@@ -58,6 +53,11 @@ require_once('lib/UpgradeWatcher.php');
 require_once('lib/ReportDashboardWidget.php');
 require_once('lib/ReportRecipient.php');
 require_once('lib/ReportEmailer.php');
+
+/*
+* Carbon Squirrel
+*/
+require_once('lib/CarbonSquirrel.php');
 
 /*
 * Disable WordPress functions
