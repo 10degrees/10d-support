@@ -24,7 +24,7 @@ function td_plugin_upgrade_completed($upgrader_object, $options)
             $pluginFolderPath = plugin_dir_path(plugin_dir_path(__DIR__));
             $pluginPath = $pluginFolderPath . $plugin;
             $pluginData = get_plugin_data($pluginPath);
-            $logStatement =  '<tr><td><small>' . date('F') . '</small></td><td><small>We updated the plugin <b>' . $pluginData["Name"] . '</b> to version ' . $pluginData["Version"] . ' on ' . date('l, jS F') . '.</small></td></tr>';
+            $logStatement =  '<tr><td><small>' . date('F') . '</small></td><td><small>We updated the plugin <b>' . $pluginData["Name"] . '</b> to version <b>' . $pluginData["Version"] . '</b> on ' . date('l, jS F') . '.</small></td></tr>';
             array_push($allUpdates, $logStatement);
         }
 
@@ -39,9 +39,9 @@ function td_plugin_upgrade_completed($upgrader_object, $options)
             $allUpdates = array();
         }
 
-        $WP_version = file_get_contents(ABSPATH . WPINC . '/version.php');
+        global $wp_version;
 
-        $logStatement =  '<tr><td colspan="3"><small>We updated the WordPress Core to the latest available version (' . $WP_version . ') on ' . date('l, jS F') . '.</small></td></tr>';
+        $logStatement = '<tr><td colspan="3"><small>We updated the WordPress Core to the latest available version (<b>' . $wp_version . '</b>) on ' . date('l, jS F') . '.</small></td></tr>';
 
         array_push($allUpdates, $logStatement);
 
@@ -58,7 +58,7 @@ function td_plugin_upgrade_completed($upgrader_object, $options)
         foreach ($options['themes'] as $themeName) {
             $themeData = wp_get_theme($themeName);
             if ($themeData->exists()) {
-                $logStatement =  '<tr><tr><td><small>' . date('F') . '</small></td><td colspan="3"><small>We updated the theme <b>' . $themeData->get('Name') . '</b> to version ' . $themeData['Version'] . ' on ' . date('l, jS F') . '.</small></td></tr>';
+                $logStatement =  '<tr><tr><td><small>' . date('F') . '</small></td><td colspan="3"><small>We updated the theme <b>' . $themeData->get('Name') . '</b> to version <b>' . $themeData['Version'] . '</b> on ' . date('l, jS F') . '.</small></td></tr>';
                 array_push($themeUpdates, $logStatement);
             }
         }
@@ -67,10 +67,6 @@ function td_plugin_upgrade_completed($upgrader_object, $options)
     }
 }
 add_action('upgrader_process_complete', 'td_plugin_upgrade_completed', 10, 2);
-
-
-
-
 
 /* Clear the Log */
 

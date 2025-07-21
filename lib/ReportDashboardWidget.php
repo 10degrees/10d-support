@@ -8,7 +8,7 @@ function td_plugin_report_dashboard_display()
     $NewTestRequired = null;
 
     //Support Contact Details
-    echo '<h3>Support Contact Details</h3>
+    echo '<div class="widget_section"> <h3>Support Contact Details</h3>
         <h4>Support available Monday-Friday 9am-5pm</h4>
         <p class="td_contact_details">
             <svg class="tend-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 16.42v3.536a1 1 0 0 1-.93.998c-.437.03-.794.046-1.07.046-8.837 0-16-7.163-16-16 0-.276.015-.633.046-1.07A1 1 0 0 1 4.044 3H7.58a.5.5 0 0 1 .498.45c.023.23.044.413.064.552A13.901 13.901 0 0 0 9.35 8.003c.095.2.033.439-.147.567l-2.158 1.542a13.047 13.047 0 0 0 6.844 6.844l1.54-2.154a.462.462 0 0 1 .573-.149 13.901 13.901 0 0 0 4 1.205c.139.02.322.042.55.064a.5.5 0 0 1 .449.498z" fill="#000"/></svg>
@@ -17,8 +17,7 @@ function td_plugin_report_dashboard_display()
         <p class="td_contact_details">
             <svg class="tend-icon" width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 Z M19.6,8.25 L12.53,12.67 C12.21,12.87 11.79,12.87 11.47,12.67 L4.4,8.25 C4.15,8.09 4,7.82 4,7.53 C4,6.86 4.73,6.46 5.3,6.81 L12,11 L18.7,6.81 C19.27,6.46 20,6.86 20,7.53 C20,7.82 19.85,8.09 19.6,8.25 Z" id="🔹Icon-Color" fill="#1D1D1D"></path></svg>
             Email us: <a href="mailto:support@10degrees.uk">support@10degrees.uk</a>
-        </p>
-        <hr />';
+        </p></div>';
 
     // Table for WordPress Plugin Updates Log
     if ($log = get_option('td_plugin_update_log')) {
@@ -54,7 +53,7 @@ function td_plugin_report_dashboard_display()
             'log' => $log,
         ));
     }
-
+    echo '<div class="widget_section">';
     // Check WP version and display
     $WP_version = get_bloginfo('version');
     $url = 'https://api.wordpress.org/core/version-check/1.7/';
@@ -83,8 +82,7 @@ function td_plugin_report_dashboard_display()
             echo ' Your site is secured with HTTPS.</p>';
         }
     }
-
-    echo '<hr /><h3>Monthly Performance Report</h3>';
+    echo '</div>';
 
     $testResults = get_option('td_GT_metrix_test');
     if ($testResults) {
@@ -94,7 +92,6 @@ function td_plugin_report_dashboard_display()
             $NewTestRequired = true;
         }
     }
-
 
     if ($testResults && ($NewTestRequired == false)) {
         echo td_wc_view('gt-metrix-overview', array('testResults' => $testResults));
@@ -107,20 +104,26 @@ function td_plugin_report_dashboard_display()
 
     echo td_wc_view('update-email-recipient', array('currentEmail' => $ReportRecipient->getReportRecipient()));
 
+    echo td_wc_view('carbon-squirrel-toggle');
+
     /* Give 10d Users the ability to clear the log by emptying the option */
     $current_user = wp_get_current_user();
     if (strpos($current_user->user_email, '@10degrees.uk') !== false) {
-        echo '<hr /><h3>Tidy log</h3><p>
+        echo '<div class="widget_section">
+        <h3>Tidy log</h3>
         <p>Removes all entries older than 2 months</p>
-        <p>
+        <p class="submit">
         <a class="button button-primary" href="?clear-the-update-log-10d" class="clear-log">Tidy up log</a>
-        </p>';
+        </p>
+        </div>';
 
-        echo '<hr /><h3>Send client report</h3><p>
+        echo '<div class="widget_section">
+        <h3>Send client report</h3>
         <p>Send the report to the client</p>
-        <p>
+        <p class="submit">
         <a class="button button-primary" href="?iewrgfiy2498yr42igr24igiojfoeifbfei88s" class="clear-log">Send report</a>
-        </p>';
+        </p>
+        </div>';
 
         if (isset($_GET['iewrgfiy2498yr42igr24igiojfoeifbfei88s'])) {
             echo "<p class='td-notification'>Report sent to client</p>";

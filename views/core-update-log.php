@@ -1,9 +1,10 @@
-<h3>WordPress core updates</h3>
+<div class="widget_section">
+  <h3>WordPress core updates</h3>
 
-<div class="table-holder">
-  <table>
-    <tbody>
-      <th style="text-align: left;">
+  <div class="table-holder">
+    <table>
+      <tbody>
+        <th style="text-align: left;">
           Recent core updates (<?php echo $count ?>)
 
           <a target="_blank" href="https://www.10degrees.uk/">
@@ -12,17 +13,16 @@
 
           </a>
 
-      </th>
+        </th>
 
         <?php
         $newestFirst = array_reverse($log);
         foreach ($newestFirst as $entry) {
-            echo $entry;
+          echo $entry;
         }
         ?>
 
       </tbody>
-  </table>
+    </table>
+  </div>
 </div>
-
-<hr />
