@@ -5,7 +5,7 @@ use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $UpdateChecker = PucFactory::buildUpdateChecker(
     'https://github.com/10degrees/10d-wordcare-report',
-    __DIR__ . '/../10d-support-report.php',
+    TEND_PLUGIN_PATH . '10d-support-report.php',
     '10d-support-report'
 );
 
