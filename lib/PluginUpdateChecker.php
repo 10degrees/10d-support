@@ -1,11 +1,11 @@
 <?php
-require_once plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
+require_once __DIR__ . '/../plugin-update-checker/plugin-update-checker.php';
 
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $UpdateChecker = PucFactory::buildUpdateChecker(
     'https://github.com/10degrees/10d-wordcare-report',
-    __FILE__,
+    __DIR__ . '/../10d-support-report.php',
     '10d-support-report'
 );
 

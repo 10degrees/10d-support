@@ -60,6 +60,11 @@ require_once('lib/ReportEmailer.php');
 require_once('lib/CarbonSquirrel.php');
 
 /*
+* Update Checker
+*/
+require_once('lib/PluginUpdateChecker.php');
+
+/*
 * Disable WordPress functions
 */
 require_once('lib/Disable.php');
