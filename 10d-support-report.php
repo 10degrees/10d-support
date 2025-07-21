@@ -2,7 +2,7 @@
 /*
 * Plugin Name: 10 Degrees Support and Maintenance
 * Description: WordPress management and reporting for 10 Degrees support and maintenance clients.
-* Version: 1.8.0
+* Version: 1.8.1
 * Author: 10 Degrees
 * Author URI: https://www.10degrees.uk
 * Github Plugin URI: https://github.com/10degrees/10d-support-report
@@ -20,6 +20,7 @@ if (!defined('ABSPATH')) {
  * Plugin's self directory
  */
 define('TEND_PLUGIN_DIR', plugin_dir_url(__FILE__));
+define('TEND_PLUGIN_PATH', plugin_dir_path(__FILE__));
 
 /**
  * Composer
@@ -58,6 +59,11 @@ require_once('lib/ReportEmailer.php');
 * Carbon Squirrel
 */
 require_once('lib/CarbonSquirrel.php');
+
+/*
+* Update Checker
+*/
+require_once('lib/PluginUpdateChecker.php');
 
 /*
 * Disable WordPress functions
