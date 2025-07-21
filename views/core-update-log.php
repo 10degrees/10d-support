@@ -5,7 +5,7 @@
     <table>
       <tbody>
         <th style="text-align: left;">
-          Recent core updates (<?php echo $count ?>)
+          Recent core updates
 
           <a target="_blank" href="https://www.10degrees.uk/">
 

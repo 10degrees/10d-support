@@ -6,59 +6,60 @@
  * @param $upgrader_object Array
  * @param $options Array
  */
+
+// Capture the WordPress version before core update runs
+function td_remember_current_wp_version($upgrader_object, $hook_extra)
+{
+    if (!empty($hook_extra['type']) && $hook_extra['type'] === 'core') {
+        update_option('td_prev_wp_version', get_bloginfo('version'));
+    }
+}
+add_filter('upgrader_pre_install', 'td_remember_current_wp_version', 10, 2);
+
 function td_plugin_upgrade_completed($upgrader_object, $options)
 {
-    // If an update has taken place and the updated type is plugins and the plugins element exists
+    // Plugin Updates
     if ($options['action'] == 'update' && $options['type'] == 'plugin') {
 
-        // Iterate through the plugins being updated and check if ours is there
-        if (get_option('td_plugin_update_log')) {
-            $allUpdates = get_option('td_plugin_update_log');
-        } else {
-            $allUpdates = array();
-        }
+        $allUpdates = get_option('td_plugin_update_log') ?: [];
 
         foreach ($options['plugins'] as $plugin) {
-
-            // get Plugin Data
             $pluginFolderPath = plugin_dir_path(plugin_dir_path(__DIR__));
             $pluginPath = $pluginFolderPath . $plugin;
             $pluginData = get_plugin_data($pluginPath);
-            $logStatement =  '<tr><td><small>' . date('F') . '</small></td><td><small>We updated the plugin <b>' . $pluginData["Name"] . '</b> to version <b>' . $pluginData["Version"] . '</b> on ' . date('l, jS F') . '.</small></td></tr>';
+            $logStatement =  '<tr><td><small>' . date('F') . '</small></td><td><small>We updated the plugin <b>' . esc_html($pluginData["Name"]) . '</b> to version <b>' . esc_html($pluginData["Version"]) . '</b> on ' . date('l, jS F') . '.</small></td></tr>';
             array_push($allUpdates, $logStatement);
         }
 
         update_option('td_plugin_update_log', $allUpdates);
-    } elseif ($options['action'] == 'update' && $options['type'] == 'core') {
+    }
 
-        if (get_option('td_core_update_log')) {
+    // Core Updates
+    if ($options['action'] == 'update' && $options['type'] == 'core') {
+        $allUpdates = get_option('td_core_update_log') ?: [];
 
-            $allUpdates = get_option('td_core_update_log');
+        $prev_version = get_option('td_prev_wp_version');
+        delete_option('td_prev_wp_version');
+
+        if ($prev_version) {
+            $logStatement = '<tr><td colspan="3"><small>We updated WordPress Core from version <b>' . esc_html($prev_version) . '</b> to the latest version on ' . date('l, jS F') . '.</small></td></tr>';
         } else {
-
-            $allUpdates = array();
+            $logStatement = '<tr><td colspan="3"><small>We updated WordPress Core to the latest version on ' . date('l, jS F') . '.</small></td></tr>';
         }
-
-        global $wp_version;
-
-        $logStatement = '<tr><td colspan="3"><small>We updated the WordPress Core to the latest available version (<b>' . $wp_version . '</b>) on ' . date('l, jS F') . '.</small></td></tr>';
 
         array_push($allUpdates, $logStatement);
 
         update_option('td_core_update_log', $allUpdates);
-    } elseif ($options['action'] == 'update' && $options['type'] == 'theme') {
-        if (get_option('td_theme_update_log')) {
+    }
 
-            $themeUpdates = get_option('td_theme_update_log');
-        } else {
-
-            $themeUpdates = array();
-        }
+    // Theme Updates
+    if ($options['action'] == 'update' && $options['type'] == 'theme') {
+        $themeUpdates = get_option('td_theme_update_log') ?: [];
 
         foreach ($options['themes'] as $themeName) {
             $themeData = wp_get_theme($themeName);
             if ($themeData->exists()) {
-                $logStatement =  '<tr><tr><td><small>' . date('F') . '</small></td><td colspan="3"><small>We updated the theme <b>' . $themeData->get('Name') . '</b> to version <b>' . $themeData['Version'] . '</b> on ' . date('l, jS F') . '.</small></td></tr>';
+                $logStatement = '<tr><td><small>' . date('F') . '</small></td><td colspan="3"><small>We updated the theme <b>' . esc_html($themeData->get('Name')) . '</b> to version <b>' . esc_html($themeData['Version']) . '</b> on ' . date('l, jS F') . '.</small></td></tr>';
                 array_push($themeUpdates, $logStatement);
             }
         }
@@ -69,16 +70,12 @@ function td_plugin_upgrade_completed($upgrader_object, $options)
 add_action('upgrader_process_complete', 'td_plugin_upgrade_completed', 10, 2);
 
 /* Clear the Log */
-
 function td_clear_the_plugin_log()
 {
-
     $current_user = wp_get_current_user();
 
     if (strpos($current_user->user_email, '@10degrees.uk') !== false) {
-
         if (isset($_REQUEST["clear-the-update-log-10d"])) {
-
             td_clear_log('td_plugin_update_log'); // Plugins
             td_clear_log('td_core_update_log'); // Core
             td_clear_log('td_theme_update_log'); // Themes
@@ -96,21 +93,14 @@ add_action('admin_init', 'td_clear_the_plugin_log');
  */
 function td_clear_log($logOptionName)
 {
-    $logEntries = get_option($logOptionName) ? get_option($logOptionName) : [];
+    $logEntries = get_option($logOptionName) ?: [];
 
-    // Search
     foreach ($logEntries as $logEntry => $value) {
-
         if (strpos($value, date('F')) !== false) {
-
-            //keep this Entry as it is from this month
-
+            // keep entries from this month
         } elseif (strpos($value, date("F", strtotime("-1 month"))) !== false) {
-
-            // keep this Entry as it is from last month
-
+            // keep entries from last month
         } else {
-
             unset($logEntries[$logEntry]);
         }
     }

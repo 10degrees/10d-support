@@ -24,10 +24,4 @@
             </tbody>
         </table>
     </div>
-
-    <p class="submit">
-        <a href="javascript:void();" class="button button-primary tend-download-report-button">
-            Export plugin report (CSV)
-        </a>
-    </p>
 </div>

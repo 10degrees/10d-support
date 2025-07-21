@@ -1,21 +1,15 @@
-<div class="widget_section">
-    <h3>Monthly Performance Report</h3>
-    <ul>
-        <li>
-            Date of last test: <?php echo date("d F Y", $testResults['timeStamp']); ?>
-        </li>
-        <li>
-            PageSpeed score: <?php echo $testResults['pagespeedScore']; ?>%
-        </li>
-        <li>
-            <?php $loadTime = ($testResults['fullyLoadedTime'] / 1000);  ?>
-        </li>
-        <li>
-            Fully loaded time: <?php echo round($loadTime, 1); ?> seconds
-        </li>
-    </ul>
+<?php $NewTestRequired = null;
+$testResults = get_option('td_GT_metrix_test');
+if ($testResults) {
+    $timeOfTest = $testResults['timeStamp'];
 
-    <p class="submit">
-        <a class="button button-primary" target="_blank" href="<?php echo $testResults['reportUrl']; ?>">View full report</a>
-    </p>
-</div>
+    if ($timeOfTest < (time() - (7 * 24 * 60 * 60))) {
+        $NewTestRequired = true;
+    }
+}
+
+if ($testResults && ($NewTestRequired == false)) {
+    echo td_wc_view('gt-metrix-results', array('testResults' => $testResults));
+} else {
+    echo '<div id="js-generate-report">Loading new performance report... (This may take a couple of minutes).</div>';
+}

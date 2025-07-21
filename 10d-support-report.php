@@ -2,7 +2,7 @@
 /*
 * Plugin Name: 10 Degrees Support and Maintenance
 * Description: WordPress management and reporting for 10 Degrees support and maintenance clients.
-* Version: 1.8.2
+* Version: 1.8.3
 * Author: 10 Degrees
 * Author URI: https://www.10degrees.uk
 * Github Plugin URI: https://github.com/10degrees/10d-support-report
@@ -26,6 +26,11 @@ define('TEND_PLUGIN_PATH', plugin_dir_path(__FILE__));
  * Composer
  */
 require __DIR__ . '/vendor/autoload.php';
+
+/*
+* Admin menu options
+*/
+require_once('lib/AdminMenuOptions.php');
 
 /*
 * Helpers
