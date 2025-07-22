@@ -10,6 +10,9 @@ if ($testResults) {
 
 if ($testResults && ($NewTestRequired == false)) {
     echo td_wc_view('gt-metrix-results', array('testResults' => $testResults));
-} else {
-    echo '<div id="js-generate-report">Loading new performance report... (This may take a couple of minutes).</div>';
-}
+} else { ?>
+    <div class="widget_section">
+        <h3>Monthly Performance Report</h3>
+        <div id="js-generate-report">Loading new performance report... (This may take a couple of minutes).</div>
+    </div>
+<?php } ?>
