@@ -151,3 +151,27 @@
 	border-bottom: 1px lightgrey solid;
 	padding-bottom: 1rem;
 }
+
+.td-score--green {
+	background: #6bc9a5;
+	color: #153124;
+	padding: 2px 6px;
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+.td-score--amber {
+	background: #f9af3f;
+	color: #452a04;
+	padding: 2px 6px;
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+.td-score--red {
+	background: #f8d7da;
+	color: #721c24;
+	padding: 2px 6px;
+	border-radius: 3px;
+	font-weight: bold;
+}
