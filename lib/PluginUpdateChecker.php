@@ -10,5 +10,3 @@ $UpdateChecker = PucFactory::buildUpdateChecker(
 );
 
 $UpdateChecker->setBranch('master');
-
-$UpdateChecker->getVcsApi()->setAuthentication('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');
