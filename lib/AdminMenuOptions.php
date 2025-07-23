@@ -26,6 +26,7 @@ function td_register_support_maintenance_settings()
     register_setting('td_support_maintenance_group', 'td_carbon_squirrel_enabled');
     register_setting('td_support_maintenance_group', 'td_gtmetrix_username');
     register_setting('td_support_maintenance_group', 'td_gtmetrix_api_key');
+    register_setting('td_support_maintenance_group', 'td_support_report_recipient_email');
 }
 
 // Render the page HTML
@@ -34,13 +35,6 @@ function td_support_maintenance_page_html()
     if (!current_user_can('manage_options')) {
         return;
     }
-
-    // Register options with WordPress Settings API (if not already registered)
-    // This ensures settings_fields() works and options are saved
-    register_setting('td_support_maintenance_group', 'td_carbon_squirrel_enabled');
-    register_setting('td_support_maintenance_group', 'td_gtmetrix_username');
-    register_setting('td_support_maintenance_group', 'td_gtmetrix_api_key');
-    register_setting('td_support_maintenance_group', 'td_support_report_recipient_email');
 
     // Get current option values
     $carbon_squirrel_enabled = get_option('td_carbon_squirrel_enabled', '0');
@@ -60,7 +54,7 @@ function td_support_maintenance_page_html()
         // Clear the log option (update this if logs are stored differently)
         update_option('td_update_log', '');
 
-        echo '<div class="notice notice-success is-dismissible"><p>Logs tidied.</p></div>';
+        echo '<div class="notice notice-success is-dismissible"><p>Logs tidied!</p></div>';
     }
 
 ?>
@@ -71,6 +65,7 @@ function td_support_maintenance_page_html()
             <?php
             settings_fields('td_support_maintenance_group');
             do_settings_sections('td_support_maintenance_group');
+            settings_errors();
             ?>
 
             <table class="form-table" role="presentation">
@@ -113,7 +108,7 @@ function td_support_maintenance_page_html()
 
         <?php if (strpos($user_email, '@10degrees.uk') !== false): ?>
             <h2>Tidy Log</h2>
-            <p>Removes all entries older than 2 months</p>
+            <p>Removes all entries older than 2 months from the dashboard widget.</p>
             <p>
                 <a href="<?php echo esc_url(add_query_arg('clear-the-update-log-10d', '1')); ?>" class="button button-primary">Tidy up log</a>
             </p>
