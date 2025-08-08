@@ -63,6 +63,8 @@
     </svg>
     Carbon Squirrel monitoring is <strong>enabled</strong>!.
 </p>
+<?php echo td_wc_view('cs-reports'); ?>
+
 <?php } else { ?>
     <p>
         <svg class="tend-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 96 96">
