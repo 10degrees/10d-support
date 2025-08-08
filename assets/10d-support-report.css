@@ -83,6 +83,7 @@
 #td_plugin_report_dashboard_widget .td_contact_details {
 	font-weight: bold;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	gap: 1rem;
 }
