@@ -1,6 +1,6 @@
 <?php
 // Disable plugins auto-update UI elements.
-add_filter('plugins_auto_update_enabled', '__return_false');
+// add_filter('plugins_auto_update_enabled', '__return_false');
 
 // Disable themes auto-update UI elements.
 add_filter('themes_auto_update_enabled', '__return_false');
